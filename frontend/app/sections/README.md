@@ -1,0 +1,8 @@
+Statefull elements made of components present throughtout the blog
+
+Examples:
+
+- Navbar
+- Forms
+- Sidebar
+- Content Area
