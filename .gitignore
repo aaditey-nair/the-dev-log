@@ -475,3 +475,6 @@ yarn-error.log*
 
 # vercel
 .vercel
+
+/shelf/
+/workspace.xml
