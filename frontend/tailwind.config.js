@@ -8,7 +8,11 @@ module.exports = {
       light: "#FFEEDB",
       dark: "#1D1A31",
     },
-    extend: {},
+    extend: {
+      gridTemplateRows: {
+        16: "repeat(16, minmax(0, 1fr))",
+      },
+    },
   },
   plugins: [],
 };
