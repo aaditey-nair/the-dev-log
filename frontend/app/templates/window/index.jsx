@@ -6,7 +6,7 @@ function Window() {
       <section className="bg-light col-span-full row-span-1 font-sans rounded-lg">
         Navbar
       </section>
-      <section className="bg-accent p-4 text-light row-span-full row-start-2 font-mono rounded-lg">
+      <section className="bg-accent p-4 text-light row-span-full row-start-2 font-mono rounded-lg space-y-2">
         <Sidebar />
       </section>
       <section className="text-light col-span-3 row-span-full row-start-2 col-start-2 rounded-lg">
