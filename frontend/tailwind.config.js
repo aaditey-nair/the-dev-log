@@ -8,6 +8,10 @@ module.exports = {
       light: "#FFEEDB",
       dark: "#1D1A31",
     },
+    fontFamily: {
+      sans: ["Lato", "sans-serif"],
+      mono: ["Source Code Pro", "monospace"],
+    },
     extend: {},
   },
   plugins: [],
