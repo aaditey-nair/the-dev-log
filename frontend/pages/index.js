@@ -4,7 +4,7 @@ import Window from "../app/templates/window";
 export default function Home() {
   return (
     <main>
-      <Window />
+      <h1>This is my blog post</h1>
     </main>
   );
 }
