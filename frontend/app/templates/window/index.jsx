@@ -1,6 +1,4 @@
-import React from "react";
-import SidebarFile from "../../components/SIdebarFile";
-import SidebarFolder from "../../components/SidebarFolder";
+import Sidebar from "../../sections/Sidebar";
 
 function Window() {
   return (
@@ -9,8 +7,7 @@ function Window() {
         Navbar
       </section>
       <section className="bg-accent p-4 text-light row-span-full row-start-2 font-mono rounded-lg">
-        <SidebarFolder folderName="THE-DEV-LOG" />
-        <SidebarFile fileName="home" />
+        <Sidebar />
       </section>
       <section className="text-light col-span-3 row-span-full row-start-2 col-start-2 rounded-lg">
         Main
