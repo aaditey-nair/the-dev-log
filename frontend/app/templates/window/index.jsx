@@ -1,6 +1,5 @@
 import React from "react";
-import { faFolder } from "@fortawesome/free-solid-svg-icons";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import SidebarFolder from "../../components/SidebarFolder";
 
 function Window() {
   return (
@@ -8,8 +7,8 @@ function Window() {
       <section className="bg-light col-span-full row-span-1 font-sans rounded-lg">
         Navbar
       </section>
-      <section className="bg-accent text-light row-span-full row-start-2 font-mono rounded-lg">
-        <FontAwesomeIcon icon={faFolder} />
+      <section className="bg-accent p-4 text-light row-span-full row-start-2 font-mono rounded-lg">
+        <SidebarFolder folderName="THE-DEV-LOG" />
       </section>
       <section className="text-light col-span-3 row-span-full row-start-2 col-start-2 rounded-lg">
         Main

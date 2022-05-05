@@ -1,4 +1,4 @@
-Individual, stateless components meant to be used as building blocks for sections
+Individual, stateless or statefull components meant to be used as building blocks for sections
 
 Examples:
 
