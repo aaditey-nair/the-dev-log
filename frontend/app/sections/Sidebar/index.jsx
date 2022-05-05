@@ -12,13 +12,13 @@ function Sidebar() {
         <p className="font-black text-base text-primary">THE-DEV-LOG</p>
       </span>
       <div className="space-y-2 pl-5">
-        <SidebarFile fileName="home" />
-        <SidebarFile fileName="contact" />
-        <SidebarFile fileName="about" />
+        <SidebarFile href="/" fileName="home" />
+        <SidebarFile href="/contact" fileName="contact" />
+        <SidebarFile href="/about" fileName="about" />
         <SidebarFolder folderName="posts">
-          <SidebarFile fileName="post 1" />
-          <SidebarFile fileName="post 2" />
-          <SidebarFile fileName="post 3" />
+          <SidebarFile href="/posts/post1" fileName="post 1" />
+          <SidebarFile href="/" fileName="post 2" />
+          <SidebarFile href="/" fileName="post 3" />
         </SidebarFolder>
       </div>
     </>
