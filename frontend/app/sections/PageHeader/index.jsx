@@ -1,11 +1,6 @@
 import { useRouter } from "next/router";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {
-  faFile,
-  faPlus,
-  faXmark,
-  faChevronRight,
-} from "@fortawesome/free-solid-svg-icons";
+import { faFile, faXmark } from "@fortawesome/free-solid-svg-icons";
 
 function PageHeader() {
   const router = useRouter();
