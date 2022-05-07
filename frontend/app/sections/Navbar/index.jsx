@@ -15,7 +15,11 @@ function Navbar() {
       <NavItem name="Contact" link="/contact" />
       <NavItem name="About" link="/about" />
       <NavItem name="Socials">
-        <NavMenuItem href="/" icon={faCodeBranch} name="GitHub" />
+        <NavMenuItem
+          href="https://github.com/Aaditey-Nair"
+          icon={faCodeBranch}
+          name="GitHub"
+        />
         <NavMenuItem href="/" icon={faDove} name="Twitter" />
         <NavMenuItem href="/" icon={faHashtag} name="Instagram" />
         <NavMenuItem href="/" icon={faBriefcase} name="Linkedin" />
