@@ -1,7 +1,6 @@
 import { useState } from "react";
 import FilesBar from "../../components/FilesBar";
 import {
-  faCog,
   faFolderClosed,
   faHistory,
   faSearch,
