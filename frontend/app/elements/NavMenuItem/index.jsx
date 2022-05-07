@@ -4,7 +4,7 @@ import Link from "next/link";
 function NavMenuItem({ name, icon, href }) {
   return (
     <Link href={href}>
-      <a className="space-x-2 block">
+      <a target="_blank" className="space-x-2 block">
         {icon ? (
           <FontAwesomeIcon icon={icon} />
         ) : (
