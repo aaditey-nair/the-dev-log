@@ -1,11 +1,12 @@
 import PageHeader from "../../components/PageHeader";
+import Navbar from "../../sections/Navbar";
 import Sidebar from "../../sections/Sidebar";
 
 function Window({ children }) {
   return (
     <div className="grid grid-cols-4 grid-rows-[repeat(22,_minmax(0,_1fr))] min-h-screen max-h-screen">
-      <section className="bg-accent col-span-full row-span-1 font-sans row-start-1">
-        Navbar
+      <section className="bg-accent col-span-full row-span-1 font-sans row-start-1 text-light z-50">
+        <Navbar />
       </section>
       <section className="bg-dark text-light row-span-full font-mono border-r border-t-2 border-stripe row-start-2">
         <Sidebar />
