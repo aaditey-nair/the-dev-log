@@ -1,5 +1,5 @@
 import SidebarFile from "../../elements/SidebarFile";
-import SidebarFolder from "../../elements/SidebarFolder";
+import SidebarFolder from "../SidebarFolder";
 
 function FilesBar() {
   return (
