@@ -1,16 +1,10 @@
-import { faChevronDown } from "@fortawesome/free-solid-svg-icons";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-
 import SidebarFile from "../../elements/SidebarFile";
 import SidebarFolder from "../../elements/SidebarFolder";
 
 function FilesBar() {
   return (
     <>
-      <span className="flex space-x-2 items-center">
-        <FontAwesomeIcon size="sm" icon={faChevronDown} />
-        <p className="font-black text-base text-primary">THE-DEV-LOG</p>
-      </span>
+      <span className="font-black text-base text-primary">THE-DEV-LOG</span>
       <div className="space-y-2 pl-5">
         <SidebarFile href="/" fileName="home" />
         <SidebarFile href="/contact" fileName="contact" />
