@@ -1,8 +1,8 @@
 import { faChevronDown } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
-import SidebarFile from "../SidebarFile";
-import SidebarFolder from "../SidebarFolder";
+import SidebarFile from "../../elements/SidebarFile";
+import SidebarFolder from "../../elements/SidebarFolder";
 
 function FilesBar() {
   return (

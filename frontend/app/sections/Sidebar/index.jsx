@@ -5,7 +5,7 @@ import {
   faFolderClosed,
   faHistory,
 } from "@fortawesome/free-solid-svg-icons";
-import SidebarTab from "../../components/SidebarTab";
+import SidebarTab from "../../elements/SidebarTab";
 
 function Sidebar() {
   const [activeTab, setActiveTab] = useState("files");
@@ -37,7 +37,6 @@ function Sidebar() {
       </div>
       <div className="pl-4 pt-4 space-y-2">
         {activeTab == "files" && <FilesBar />}
-        {activeTab}
       </div>
     </>
   );
