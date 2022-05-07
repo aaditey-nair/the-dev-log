@@ -30,7 +30,7 @@ function NavItem({ name, children, link }) {
       </OutsideClickHandler>
     );
   } else {
-    return <a href={link}>{name}</a>;
+    return <Link href={link}>{name}</Link>;
   }
 }
 
