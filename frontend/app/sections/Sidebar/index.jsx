@@ -4,6 +4,7 @@ import {
   faCog,
   faFolderClosed,
   faHistory,
+  faSearch,
 } from "@fortawesome/free-solid-svg-icons";
 import SidebarTab from "../../elements/SidebarTab";
 
@@ -23,10 +24,10 @@ function Sidebar() {
           icon={faFolderClosed}
         />
         <SidebarTab
-          tabName="Settings"
+          tabName="Search"
           handleClick={changeActiveTab}
           activeTab={activeTab}
-          icon={faCog}
+          icon={faSearch}
         />
         <SidebarTab
           tabName="History"
