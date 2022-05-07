@@ -3,16 +3,14 @@ import { faLink } from "@fortawesome/free-solid-svg-icons";
 import Link from "next/link";
 function NavMenuItem({ name, icon, href }) {
   return (
-    <Link href={href}>
-      <a target="_blank" className="space-x-2 block">
-        {icon ? (
-          <FontAwesomeIcon icon={icon} />
-        ) : (
-          <FontAwesomeIcon icon={faLink} />
-        )}
-        <span>{name}</span>
-      </a>
-    </Link>
+    <a target="_blank" href={href} className="space-x-2 block">
+      {icon ? (
+        <FontAwesomeIcon icon={icon} />
+      ) : (
+        <FontAwesomeIcon icon={faLink} />
+      )}
+      <span>{name}</span>
+    </a>
   );
 }
 
