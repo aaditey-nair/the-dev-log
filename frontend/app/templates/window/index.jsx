@@ -1,4 +1,4 @@
-import PageHeader from "../../sections/PageHeader";
+import PageHeader from "../../components/PageHeader";
 import Sidebar from "../../sections/Sidebar";
 
 function Window({ children }) {
