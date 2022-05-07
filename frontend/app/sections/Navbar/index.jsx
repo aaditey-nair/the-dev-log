@@ -9,7 +9,7 @@ import {
 
 function Navbar() {
   return (
-    <div className="flex items-center px-4 h-full gap-4">
+    <nav className="flex items-center px-4 h-full gap-4">
       <span className="font-mono text-primary">dev.log()</span>
       <NavItem name="Home" link="/" />
       <NavItem name="Contact" link="/contact" />
@@ -24,7 +24,7 @@ function Navbar() {
         <NavMenuItem href="/" icon={faHashtag} name="Instagram" />
         <NavMenuItem href="/" icon={faBriefcase} name="Linkedin" />
       </NavItem>
-    </div>
+    </nav>
   );
 }
 
