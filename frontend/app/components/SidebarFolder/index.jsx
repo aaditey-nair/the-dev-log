@@ -15,7 +15,7 @@ function SidebarFolder({ folderName, children }) {
           e.preventDefault();
           setOpen(!open);
         }}
-        className="flex items-center space-x-2"
+        className="flex items-center space-x-2 cursor-pointer"
       >
         <span className="min-w-[1rem]">
           {open ? (
