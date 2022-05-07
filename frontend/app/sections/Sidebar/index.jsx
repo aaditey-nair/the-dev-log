@@ -1,25 +1,43 @@
-import { faChevronDown } from "@fortawesome/free-solid-svg-icons";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-
-import SidebarFile from "../../components/SidebarFile";
-import SidebarFolder from "../../components/SidebarFolder";
+import { useState } from "react";
+import FilesBar from "../../components/FilesBar";
+import {
+  faCog,
+  faFolderClosed,
+  faHistory,
+} from "@fortawesome/free-solid-svg-icons";
+import SidebarTab from "../../components/SidebarTab";
 
 function Sidebar() {
+  const [activeTab, setActiveTab] = useState("files");
+  function changeActiveTab(e, tab) {
+    e.preventDefault();
+    setActiveTab(tab);
+  }
   return (
     <>
-      <span className="flex space-x-2 items-center">
-        <FontAwesomeIcon size="sm" icon={faChevronDown} />
-        <p className="font-black text-base text-primary">THE-DEV-LOG</p>
-      </span>
-      <div className="space-y-2 pl-5">
-        <SidebarFile href="/" fileName="home" />
-        <SidebarFile href="/contact" fileName="contact" />
-        <SidebarFile href="/about" fileName="about" />
-        <SidebarFolder folderName="posts">
-          <SidebarFile href="/posts/post1" fileName="post 1" />
-          <SidebarFile href="/" fileName="post 2" />
-          <SidebarFile href="/" fileName="post 3" />
-        </SidebarFolder>
+      <div className="bg-accent">
+        <SidebarTab
+          tabName="Files"
+          handleClick={changeActiveTab}
+          activeTab={activeTab}
+          icon={faFolderClosed}
+        />
+        <SidebarTab
+          tabName="Settings"
+          handleClick={changeActiveTab}
+          activeTab={activeTab}
+          icon={faCog}
+        />
+        <SidebarTab
+          tabName="History"
+          handleClick={changeActiveTab}
+          activeTab={activeTab}
+          icon={faHistory}
+        />
+      </div>
+      <div className="pl-4 pt-4 space-y-2">
+        {activeTab == "files" && <FilesBar />}
+        {activeTab}
       </div>
     </>
   );

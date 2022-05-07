@@ -7,7 +7,7 @@ function Window({ children }) {
       <section className="bg-accent col-span-full row-span-1 font-sans">
         Navbar
       </section>
-      <section className="bg-dark p-4 text-light row-span-full row-start-2 font-mono space-y-2 border-r border-t-2 border-stripe">
+      <section className="bg-dark text-light row-span-full row-start-2 font-mono border-r border-t-2 border-stripe">
         <Sidebar />
       </section>
       <section className="text-light col-span-3 row-span-full row-start-2 col-start-2 border-l border-stripe flex flex-col">
