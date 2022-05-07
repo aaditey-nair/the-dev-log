@@ -5,6 +5,7 @@ module.exports = {
       primary: "#50FFB1",
       secondary: "#FFC15E",
       accent: "#282444",
+      stripe: "#453e75",
       light: "#FFEEDB",
       dark: "#1D1A31",
     },
