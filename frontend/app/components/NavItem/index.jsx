@@ -1,11 +1,18 @@
 import Link from "next/link";
 import { useState } from "react";
+import OutsideClickHandler from "../OutsideClickHandler";
 
 function NavItem({ name, children, link }) {
   if (children) {
     const [menuOpen, setMenuOpen] = useState(false);
     return (
-      <div>
+      <OutsideClickHandler
+        onClickOutside={() => {
+          if (menuOpen) {
+            setMenuOpen(false);
+          }
+        }}
+      >
         <span
           onClick={(e) => {
             e.preventDefault();
@@ -20,7 +27,7 @@ function NavItem({ name, children, link }) {
             {children}
           </div>
         )}
-      </div>
+      </OutsideClickHandler>
     );
   } else {
     return (
