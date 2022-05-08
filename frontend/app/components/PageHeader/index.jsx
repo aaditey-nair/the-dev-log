@@ -12,7 +12,11 @@ function PageHeader() {
           <span className="pl-2">home</span>
         ) : (
           <span className="pl-2">
-            {router.asPath.split("/")[router.asPath.split("/").length - 1]}
+            {
+              router.asPath
+                .split("/")
+                [router.asPath.split("/").length - 1].split("?")[0]
+            }
           </span>
         )}
         <FontAwesomeIcon className="ml-6" size="md" icon={faXmark} />
