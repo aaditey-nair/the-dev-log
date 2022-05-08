@@ -1,4 +1,5 @@
 import TextBlogPreview from "../app/elements/TextBlogPreview";
+import CategoryLink from "../app/elements/CategoryLink";
 
 function HomePage() {
   return (
@@ -27,7 +28,18 @@ function HomePage() {
           <TextBlogPreview />
         </div>
         <div className="space-y-4">
-          <div className="h-40 bg-secondary"></div>
+          <div className="bg-secondary p-2 flex flex-wrap gap-2">
+            <CategoryLink name="python" />
+            <CategoryLink name="AI/ML" />
+            <CategoryLink name="flutter" />
+            <CategoryLink name="API" />
+            <CategoryLink name="next.js" />
+            <CategoryLink name="vue" />
+            <CategoryLink name="javascript" />
+            <CategoryLink name="react" />
+            <CategoryLink name="web design" />
+            <CategoryLink name="automation" />
+          </div>
           <div className="h-[26rem] bg-secondary"></div>
         </div>
       </div>
