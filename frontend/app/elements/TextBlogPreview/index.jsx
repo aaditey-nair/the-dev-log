@@ -15,7 +15,7 @@ function TextBlogPreview({ details }) {
         occaecat cupidatat non proident, sunt in culpa qui officia deserunt
         mollit anim id est laborum.
       </p>
-      <p className="mt-4 text-sm text-stripe">Sunday, 8th May 2022</p>
+      <p className="mt-4 text-sm text-primary">Sunday, 8th May 2022</p>
     </div>
   );
 }
