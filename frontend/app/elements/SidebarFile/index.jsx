@@ -7,10 +7,10 @@ import { faFile } from "@fortawesome/free-solid-svg-icons";
 
 const SidebarFile = React.memo(({ fileName, href }) => (
   <Link href={href}>
-    <p className="cursor-pointer">
+    <a className="block">
       <FontAwesomeIcon className="pr-2" size="lg" icon={faFile} />
       {fileName}
-    </p>
+    </a>
   </Link>
 ));
 
