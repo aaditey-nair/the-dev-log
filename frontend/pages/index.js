@@ -33,7 +33,7 @@ function HomePage() {
             <CategoryLink name="AI/ML" />
             <CategoryLink name="flutter" />
             <CategoryLink name="API" />
-            <CategoryLink name="next.js" />
+            <CategoryLink name="next js" />
             <CategoryLink name="vue" />
             <CategoryLink name="javascript" />
             <CategoryLink name="react" />
