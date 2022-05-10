@@ -2,30 +2,16 @@
 @tailwind components;
 @tailwind utilities;
 
-body {
-  padding: 0;
-  margin: 0;
-  font-family: 'Lato', sans-serif;
-  min-height: 100vh;
-  @apply bg-dark
-}
-
-a {
-  color: inherit;
-  text-decoration: none;
-}
-
 * {
   box-sizing: border-box;
 }
 
-::-moz-selection { /* Code for Firefox */
-  @apply bg-primary text-dark
-}
-
-::selection {
-  @apply bg-primary text-dark
-
+body {
+  font-family: 'Lato', sans-serif;
+  margin: 0;
+  min-height: 100vh;
+  padding: 0;
+  @apply bg-dark
 }
 
 input:focus,
@@ -33,4 +19,18 @@ select:focus,
 textarea:focus,
 button:focus {
     outline: none;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+::-moz-selection {
+  @apply bg-primary text-dark
+}
+
+::selection {
+  @apply bg-primary text-dark
+
 }
