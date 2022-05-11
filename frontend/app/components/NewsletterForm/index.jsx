@@ -3,7 +3,7 @@ import { useRef, useState } from "react";
 import FormInput from "../../elements/FormInput";
 import SubmitDark from "../../elements/SubmitDark";
 
-import { dataRequired } from "../../utils";
+import { dataRequired, isEmail } from "../../utils";
 
 function NewsletterForm() {
   const name = useRef(null);
@@ -11,11 +11,17 @@ function NewsletterForm() {
   const [errors, setErrors] = useState([]);
 
   function handleSubmit(params) {
+    if (!dataRequired(name.current.value)) {
+      setErrors((prev) => ["This field is required", prev[1]]);
+    } else {
+      setErrors((prev) => ["", prev[1]]);
+    }
     if (!dataRequired(email.current.value)) {
       setErrors((prev) => [prev[0], "This field is required"]);
-    } else if (email.current.value.indexOf("@") === -1) {
+    } else if (!isEmail(email.current.value)) {
       setErrors((prev) => [prev[0], "Invalid email address"]);
     } else {
+      setErrors((prev) => [prev[0], ""]);
       console.log(email.current.value);
     }
   }
@@ -31,7 +37,7 @@ function NewsletterForm() {
         type="text"
         name="fname"
       />
-      {errors && <p>{errors[0]}</p>}
+      {errors && <p className="text-dark">{errors[0]}</p>}
       <label htmlFor="subscription-email" className="text-dark">
         Email
       </label>
