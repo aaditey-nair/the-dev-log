@@ -1,5 +1,6 @@
 import { useRef } from "react";
 import FormInput from "../../elements/FormInput";
+import SubmitPrimary from "../../elements/SubmitPrimary";
 
 function NewsletterForm() {
   const name = useRef(null);
@@ -24,7 +25,7 @@ function NewsletterForm() {
         type="email"
         name="email"
       />
-      <button>Submit</button>
+      <SubmitPrimary name="Submit" />
     </form>
   );
 }
