@@ -5,7 +5,7 @@ function SubmitPrimary({ handleSubmit, name }) {
         e.preventDefault();
         handleSubmit();
       }}
-      className="max-w-max bg-primary text-dark py-2 px-6 hover:scale-105 transition-transform"
+      className="max-w-max bg-primary text-dark py-2 px-6 hover:bg-secondary transition-colors"
     >
       {name}
     </button>
