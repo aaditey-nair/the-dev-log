@@ -1,6 +1,6 @@
 import { useRef } from "react";
 import FormInput from "../../elements/FormInput";
-import SubmitPrimary from "../../elements/SubmitPrimary";
+import SubmitDark from "../../elements/SubmitDark";
 
 function NewsletterForm() {
   const name = useRef(null);
@@ -25,7 +25,7 @@ function NewsletterForm() {
         type="email"
         name="email"
       />
-      <SubmitPrimary name="Submit" />
+      <SubmitDark name="Subscribe" />
     </form>
   );
 }

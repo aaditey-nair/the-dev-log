@@ -42,7 +42,7 @@ function HomePage() {
             <CategoryLink name="web design" />
             <CategoryLink name="automation" />
           </div>
-          <div className="bg-secondary">
+          <div className="bg-primary">
             <NewsletterForm />
           </div>
         </div>
