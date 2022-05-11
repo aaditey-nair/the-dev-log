@@ -1,10 +1,22 @@
-import { useRef } from "react";
+import { useRef, useState } from "react";
 import FormInput from "../../elements/FormInput";
 import SubmitDark from "../../elements/SubmitDark";
 
 function NewsletterForm() {
   const name = useRef(null);
   const email = useRef(null);
+  const [errors, setErrors] = useState([]);
+
+  function handleSubmit(params) {
+    if (email.current.value === "") {
+      setErrors((prev) => [prev[0], "This field is required"]);
+    } else if (email.current.value.indexOf("@") === -1) {
+      setErrors((prev) => [prev[0], "Invalid email address"]);
+    } else {
+      console.log(email.current.value);
+    }
+  }
+
   return (
     <form className="flex flex-col gap-4 p-4">
       <label htmlFor="subscription-fname" className="text-dark">
@@ -16,6 +28,7 @@ function NewsletterForm() {
         type="text"
         name="fname"
       />
+      {errors && <p>{errors[0]}</p>}
       <label htmlFor="subscription-email" className="text-dark">
         Email
       </label>
@@ -25,7 +38,8 @@ function NewsletterForm() {
         type="email"
         name="email"
       />
-      <SubmitDark name="Subscribe" />
+      {errors && <p className="text-dark">{errors[1]}</p>}
+      <SubmitDark handleSubmit={handleSubmit} name="Subscribe" />
     </form>
   );
 }
