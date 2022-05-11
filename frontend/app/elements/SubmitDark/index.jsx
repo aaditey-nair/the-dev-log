@@ -1,4 +1,4 @@
-function SUbmitSecondary({ handleSubmit, name }) {
+function SubmitDark({ handleSubmit, name }) {
   return (
     <button
       onClick={(e) => {
@@ -12,4 +12,4 @@ function SUbmitSecondary({ handleSubmit, name }) {
   );
 }
 
-export default SUbmitSecondary;
+export default SubmitDark;
