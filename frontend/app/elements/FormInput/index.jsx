@@ -1,11 +1,11 @@
-import React from "react";
-
 function FormInput({ name, type, inputId }) {
   let placeholder;
   if (type === "email") {
     placeholder = "johndoe@email.com";
   } else if (type === "text") {
-    if (name === "fname") {
+    if (name === "name") {
+      placeholder = "John Doe";
+    } else if (name == "fname") {
       placeholder = "John";
     } else {
       placeholder = "Doe";
