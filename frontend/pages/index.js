@@ -27,7 +27,6 @@ function HomePage() {
           <TextBlogPreview />
           <TextBlogPreview />
           <TextBlogPreview />
-          <TextBlogPreview />
         </div>
         <div className="space-y-4">
           <div className="bg-secondary p-2 flex flex-wrap gap-2">
@@ -42,7 +41,7 @@ function HomePage() {
             <CategoryLink name="web design" />
             <CategoryLink name="automation" />
           </div>
-          <div className="bg-primary text-dark">
+          <div className="bg-primary text-dark mt-auto">
             <div className="px-4 pt-2">
               <h1 className="text-xl font-black">
                 An development newsletter that actually helps
