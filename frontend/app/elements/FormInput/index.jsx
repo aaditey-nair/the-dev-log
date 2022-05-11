@@ -1,4 +1,4 @@
-function FormInput({ name, type, inputId }) {
+function FormInput({ name, type, inputId, state }) {
   let placeholder;
   if (type === "email") {
     placeholder = "johndoe@email.com";
@@ -19,6 +19,7 @@ function FormInput({ name, type, inputId }) {
         type={type}
         name={name}
         id={inputId}
+        ref={state}
       />
     </>
   );
