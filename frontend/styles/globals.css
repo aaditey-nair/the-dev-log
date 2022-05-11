@@ -33,3 +33,19 @@ a {
 ::selection {
   @apply bg-stripe text-light
 }
+
+::-webkit-scrollbar {
+  @apply w-4
+}
+
+::-webkit-scrollbar-track-piece {
+  @apply bg-accent
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-primary
+}
+
+::-webkit-scrollbar-button {
+  @apply bg-primary
+}
