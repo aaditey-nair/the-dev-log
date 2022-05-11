@@ -5,7 +5,7 @@ function SubmitDark({ handleSubmit, name }) {
         e.preventDefault();
         handleSubmit();
       }}
-      className="max-w-max bg-stripe text-light py-2 px-6 hover:scale-105 transition-transform"
+      className="max-w-max bg-stripe hover:bg-accent text-light py-2 px-6 transition-colors"
     >
       {name}
     </button>
