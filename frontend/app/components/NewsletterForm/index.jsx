@@ -28,26 +28,34 @@ function NewsletterForm() {
 
   return (
     <form className="flex flex-col gap-4 p-4">
-      <label htmlFor="subscription-fname" className="text-dark">
-        First Name
-      </label>
-      <FormInput
-        state={name}
-        inputId="subscription-fname"
-        type="text"
-        name="fname"
-      />
-      {errors && <p className="text-dark">{errors[0]}</p>}
-      <label htmlFor="subscription-email" className="text-dark">
-        Email
-      </label>
-      <FormInput
-        state={email}
-        inputId="subscription-email"
-        type="email"
-        name="email"
-      />
-      {errors && <p className="text-dark">{errors[1]}</p>}
+      <div className="space-y-2">
+        <label htmlFor="subscription-fname" className="text-dark font-black">
+          First Name
+        </label>
+        <FormInput
+          state={name}
+          inputId="subscription-fname"
+          type="text"
+          name="fname"
+        />
+        {errors && (
+          <p className="text-dark font-black font-mono">{errors[0]}</p>
+        )}
+      </div>
+      <div className="space-y-2">
+        <label htmlFor="subscription-email" className="text-dark font-black">
+          Email
+        </label>
+        <FormInput
+          state={email}
+          inputId="subscription-email"
+          type="email"
+          name="email"
+        />
+        {errors && (
+          <p className="text-dark font-black font-mono">{errors[1]}</p>
+        )}
+      </div>
       <SubmitDark handleSubmit={handleSubmit} name="Subscribe" />
     </form>
   );
