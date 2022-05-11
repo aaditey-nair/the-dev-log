@@ -1,6 +1,9 @@
 import { useRef, useState } from "react";
+
 import FormInput from "../../elements/FormInput";
 import SubmitDark from "../../elements/SubmitDark";
+
+import { dataRequired } from "../../utils";
 
 function NewsletterForm() {
   const name = useRef(null);
@@ -8,7 +11,7 @@ function NewsletterForm() {
   const [errors, setErrors] = useState([]);
 
   function handleSubmit(params) {
-    if (email.current.value === "") {
+    if (!dataRequired(email.current.value)) {
       setErrors((prev) => [prev[0], "This field is required"]);
     } else if (email.current.value.indexOf("@") === -1) {
       setErrors((prev) => [prev[0], "Invalid email address"]);
