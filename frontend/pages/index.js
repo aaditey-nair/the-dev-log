@@ -42,7 +42,18 @@ function HomePage() {
             <CategoryLink name="web design" />
             <CategoryLink name="automation" />
           </div>
-          <div className="bg-primary">
+          <div className="bg-primary text-dark">
+            <div className="px-4 pt-2">
+              <h1 className="text-xl font-black">
+                An development newsletter that actually helps
+              </h1>
+              <p className="py-2 text-sm leading-6">
+                This blog is meant to share fun and informative content for
+                developers. This newsletter is no different. Be the first to be
+                notified on new content
+              </p>
+              <p>No spam, no adverts. Unsubscribe at any time</p>
+            </div>
             <NewsletterForm />
           </div>
         </div>
