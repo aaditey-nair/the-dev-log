@@ -1,6 +1,7 @@
 import TextBlogPreview from "../app/elements/TextBlogPreview";
 import CategoryLink from "../app/elements/CategoryLink";
 import FormInput from "../app/elements/FormInput";
+import NewsletterForm from "../app/components/NewsletterForm";
 
 function HomePage() {
   return (
@@ -42,24 +43,7 @@ function HomePage() {
             <CategoryLink name="automation" />
           </div>
           <div className="bg-secondary">
-            <form className="flex flex-col gap-4 p-4">
-              <label htmlFor="subscription-fname" className="text-dark">
-                First Name
-              </label>
-              <FormInput
-                inputId="subscription-fname"
-                type="text"
-                name="fname"
-              />
-              <label htmlFor="subscription-email" className="text-dark">
-                Email
-              </label>
-              <FormInput
-                inputId="subscription-email"
-                type="email"
-                name="email"
-              />
-            </form>
+            <NewsletterForm />
           </div>
         </div>
       </div>
