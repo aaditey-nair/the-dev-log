@@ -17,7 +17,7 @@ function HomePage() {
         <div className="bg-primary h-36 col-span-2"></div>
         <div className="bg-light h-36 col-span-2"></div>
         <div className="bg-secondary h-36 col-span-1"></div>
-        <div className="bg-gradient-to-r from-primary to-accent h-36 col-span-full"></div>
+        <div className="bg-stripe h-36 col-span-full"></div>
         <div className="col-span-2 space-y-8">
           <TextBlogPreview />
           <TextBlogPreview />
