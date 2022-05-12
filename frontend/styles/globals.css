@@ -46,6 +46,10 @@ a {
   @apply bg-primary
 }
 
+::-webkit-scrollbar-thumb:hover {
+  @apply bg-secondary
+}
+
 ::-webkit-scrollbar-button {
   @apply bg-primary
 }
