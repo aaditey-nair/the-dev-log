@@ -47,7 +47,7 @@ function HomePage() {
                 developers. This newsletter is no different. Be the first to be
                 notified on new content
               </p>
-              <p>No spam, no adverts. Unsubscribe at any time</p>
+              <p>No spam, no adverts. Unsubscribe any time</p>
             </div>
             <NewsletterForm />
           </div>
