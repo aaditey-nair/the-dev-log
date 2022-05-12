@@ -1,6 +1,5 @@
 import TextBlogPreview from "../app/elements/TextBlogPreview";
 import CategoryLink from "../app/elements/CategoryLink";
-import FormInput from "../app/elements/FormInput";
 import NewsletterForm from "../app/components/NewsletterForm";
 
 function HomePage() {
