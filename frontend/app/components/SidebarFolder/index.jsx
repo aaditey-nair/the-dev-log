@@ -1,5 +1,9 @@
 import { useState } from "react";
-import { faFolder, faChevronRight } from "@fortawesome/free-solid-svg-icons";
+import {
+  faFolder,
+  faChevronRight,
+  faChevronDown,
+} from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 function SidebarFolder({ folderName, children }) {
@@ -14,13 +18,11 @@ function SidebarFolder({ folderName, children }) {
         className="flex items-center space-x-2 cursor-pointer"
       >
         <span className="min-w-[1rem]">
-          <FontAwesomeIcon
-            className={
-              (open ? "rotate-90" : "rotate-0") + " transition-transform"
-            }
-            size="sm"
-            icon={faChevronRight}
-          />
+          {open ? (
+            <FontAwesomeIcon size="sm" icon={faChevronDown} />
+          ) : (
+            <FontAwesomeIcon size="sm" icon={faChevronRight} />
+          )}
         </span>
         <FontAwesomeIcon size="lg" icon={faFolder} />
         <p className="select-none">{folderName}</p>
