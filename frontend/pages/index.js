@@ -13,11 +13,11 @@ function HomePage() {
         tempor incididunt ut labore et dolore magna aliqua.
       </p>
       <div className="grid grid-cols-3 gap-4">
-        <div className="bg-secondary h-36 col-span-1"></div>
-        <div className="bg-primary h-36 col-span-2"></div>
-        <div className="bg-light h-36 col-span-2"></div>
-        <div className="bg-secondary h-36 col-span-1"></div>
-        <div className="bg-stripe h-36 col-span-full"></div>
+        <article className="bg-secondary h-36 col-span-1"></article>
+        <article className="bg-primary h-36 col-span-2"></article>
+        <article className="bg-light h-36 col-span-2"></article>
+        <article className="bg-secondary h-36 col-span-1"></article>
+        <article className="bg-stripe h-36 col-span-full"></article>
         <div className="col-span-2 space-y-8">
           <TextBlogPreview />
           <TextBlogPreview />
