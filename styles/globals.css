@@ -50,10 +50,6 @@ a {
   @apply bg-secondary
 }
 
-::-webkit-scrollbar-button {
-  @apply bg-primary
-}
-
 @supports (scrollbar-color: #50ffb1 #282444) {
   body {
     scrollbar-color: #50ffb1 #282444;
