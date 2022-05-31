@@ -5,13 +5,15 @@ import NewsletterForm from "../app/components/NewsletterForm";
 function HomePage() {
   return (
     <>
-      <h1 className="text-8xl font-mono text-primary text-center font-black pt-8">
-        dev.log()
-      </h1>
-      <p className="text-center mx-auto my-4 text-light max-w-[80ch]">
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-        tempor incididunt ut labore et dolore magna aliqua.
-      </p>
+      <header className="mt-8 mb-10">
+        <h1 className="text-8xl font-mono text-primary text-center font-black">
+          dev.log()
+        </h1>
+        <p className="text-center mx-auto mt-4 text-light max-w-[80ch]">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+          eiusmod tempor incididunt ut labore et dolore magna aliqua.
+        </p>
+      </header>
       <div className="grid grid-cols-3 gap-4">
         <article className="bg-secondary h-36 col-span-1"></article>
         <article className="bg-primary h-36 col-span-2"></article>
