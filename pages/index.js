@@ -1,6 +1,6 @@
 import TextBlogPreview from "../app/elements/TextBlogPreview";
 import CategoryLink from "../app/elements/CategoryLink";
-import NewsletterForm from "../app/sections/NewsletterForm";
+import NewsletterForm from "../app/components/NewsletterForm";
 
 function HomePage() {
   return (
