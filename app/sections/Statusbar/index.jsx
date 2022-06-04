@@ -1,5 +1,5 @@
-import NavItem from "../../components/StatusbarItem";
-import NavMenuItem from "../../elements/StatusbarMenuItem";
+import StatusbarItem from "../../components/StatusbarItem";
+import StatusbarMenuItem from "../../elements/StatusbarMenuItem";
 import {
   faBriefcase,
   faCodeBranch,
@@ -11,19 +11,19 @@ function Statusbar() {
   return (
     <nav className="flex items-center px-4 h-full gap-4">
       <span className="font-mono text-primary">dev.log()</span>
-      <NavItem name="Home" link="/" />
-      <NavItem name="Contact" link="/contact" />
-      <NavItem name="About" link="/about" />
-      <NavItem name="Socials">
-        <NavMenuItem
+      <StatusbarItem name="Home" link="/" />
+      <StatusbarItem name="Contact" link="/contact" />
+      <StatusbarItem name="About" link="/about" />
+      <StatusbarItem name="Socials">
+        <StatusbarMenuItem
           href="https://github.com/Aaditey-Nair"
           icon={faCodeBranch}
           name="GitHub"
         />
-        <NavMenuItem href="/" icon={faDove} name="Twitter" />
-        <NavMenuItem href="/" icon={faHashtag} name="Instagram" />
-        <NavMenuItem href="/" icon={faBriefcase} name="Linkedin" />
-      </NavItem>
+        <StatusbarMenuItem href="/" icon={faDove} name="Twitter" />
+        <StatusbarMenuItem href="/" icon={faHashtag} name="Instagram" />
+        <StatusbarMenuItem href="/" icon={faBriefcase} name="Linkedin" />
+      </StatusbarItem>
     </nav>
   );
 }
