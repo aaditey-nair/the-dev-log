@@ -8,9 +8,7 @@ function Statusbar({ name, children, link }) {
     return (
       <OutsideClickHandler
         onClickOutside={() => {
-          if (menuOpen) {
-            setMenuOpen(false);
-          }
+          menuOpen && setMenuOpen(false);
         }}
       >
         <span
