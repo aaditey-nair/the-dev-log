@@ -11,7 +11,7 @@ function Statusbar({ name, children, icon }) {
       }}
     >
       {menuOpen && (
-        <div className="absolute bottom-10 bg-accent p-4 text-light bg-opacity-80 space-y-2">
+        <div className="absolute bottom-10 bg-accent p-4 text-light space-y-2">
           {children}
         </div>
       )}
