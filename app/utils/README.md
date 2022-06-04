@@ -3,4 +3,4 @@ Simple javascript functions to complete certain taska. They will not be elements
 Examples:
 
 - Get my Age
-- Fortmat time
+- Format time
