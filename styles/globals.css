@@ -7,18 +7,18 @@
 }
 
 body {
-  font-family: 'Lato', sans-serif;
+  font-family: "Lato", sans-serif;
   margin: 0;
   min-height: 100vh;
   padding: 0;
-  @apply bg-dark
+  @apply bg-dark;
 }
 
 input:focus,
 select:focus,
 textarea:focus,
 button:focus {
-    outline: none;
+  outline: none;
 }
 
 a {
@@ -27,27 +27,27 @@ a {
 }
 
 ::-moz-selection {
-  @apply bg-stripe text-light
+  @apply bg-stripe text-light;
 }
 
 ::selection {
-  @apply bg-stripe text-light
+  @apply bg-stripe text-light;
 }
 
 ::-webkit-scrollbar {
-  @apply w-4
+  @apply w-2;
 }
 
 ::-webkit-scrollbar-track-piece {
-  @apply bg-accent
+  @apply bg-accent;
 }
 
 ::-webkit-scrollbar-thumb {
-  @apply bg-primary
+  @apply bg-primary;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  @apply bg-secondary
+  @apply bg-secondary;
 }
 
 @supports (scrollbar-color: #50ffb1 #282444) {
