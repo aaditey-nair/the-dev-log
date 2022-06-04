@@ -7,7 +7,6 @@ function FilesBar() {
       <span className="font-black text-base text-primary">THE-DEV-LOG</span>
       <div className="space-y-2 pl-5">
         <SidebarFile href="/" fileName="home" />
-        <SidebarFile href="/contact" fileName="contact" />
         <SidebarFile href="/about" fileName="about" />
         <SidebarFolder folderName="posts">
           <SidebarFile href="/posts/post1" fileName="post 1" />
