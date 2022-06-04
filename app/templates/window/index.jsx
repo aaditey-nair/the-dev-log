@@ -14,7 +14,7 @@ function Window({ children }) {
           {children}
         </main>
       </section>
-      <section className="bg-accent col-span-full row-span-1 font-sans text-light z-50">
+      <section className="bg-accent col-span-full row-span-1 font-sans text-light z-50 border-t-2 border-stripe">
         <Statusbar />
       </section>
     </div>
