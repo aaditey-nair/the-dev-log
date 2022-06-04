@@ -1,4 +1,3 @@
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 function StatusMenuItem({ name, icon, href }) {
   return (
