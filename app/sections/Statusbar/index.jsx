@@ -1,5 +1,5 @@
-import NavItem from "../../components/NavItem";
-import NavMenuItem from "../../elements/NavMenuItem";
+import NavItem from "../../components/StatusbarItem";
+import NavMenuItem from "../../elements/StatusbarMenuItem";
 import {
   faBriefcase,
   faCodeBranch,
@@ -7,7 +7,7 @@ import {
   faHashtag,
 } from "@fortawesome/free-solid-svg-icons";
 
-function Navbar() {
+function Statusbar() {
   return (
     <nav className="flex items-center px-4 h-full gap-4">
       <span className="font-mono text-primary">dev.log()</span>
@@ -28,4 +28,4 @@ function Navbar() {
   );
 }
 
-export default Navbar;
+export default Statusbar;

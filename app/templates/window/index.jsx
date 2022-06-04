@@ -1,5 +1,5 @@
 import PageHeader from "../../components/PageHeader";
-import Navbar from "../../sections/Navbar";
+import Statusbar from "../../sections/Statusbar";
 import Sidebar from "../../sections/Sidebar";
 
 function Window({ children }) {
@@ -15,7 +15,7 @@ function Window({ children }) {
         </main>
       </section>
       <section className="bg-accent col-span-full row-span-1 font-sans text-light z-50">
-        <Navbar />
+        <Statusbar />
       </section>
     </div>
   );

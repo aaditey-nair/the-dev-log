@@ -2,7 +2,7 @@ import Link from "next/link";
 import { useState } from "react";
 import OutsideClickHandler from "../OutsideClickHandler";
 
-function NavItem({ name, children, link }) {
+function Statusbar({ name, children, link }) {
   if (children) {
     const [menuOpen, setMenuOpen] = useState(false);
     return (
@@ -34,4 +34,4 @@ function NavItem({ name, children, link }) {
   }
 }
 
-export default NavItem;
+export default Statusbar;
