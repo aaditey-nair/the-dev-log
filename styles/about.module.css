@@ -1,0 +1,23 @@
+.container {
+  margin: 1rem 0;
+}
+
+.container h3 {
+  @apply font-black text-secondary font-mono;
+}
+
+.container p {
+  @apply text-light;
+}
+
+.container ul {
+  @apply list-disc my-2;
+}
+
+.container li {
+  @apply ml-8;
+}
+
+.highlight {
+  @apply font-black text-primary;
+}

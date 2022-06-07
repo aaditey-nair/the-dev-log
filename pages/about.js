@@ -1,16 +1,15 @@
-import React from "react";
+import styles from "../styles/about.module.css";
 
 function About() {
   return (
     <>
-      <p>
+      <p className="mb-4">
         Welcome stranger, to my beautiful mess of a blog. <br />
         I'm Aadi, a teen full-stack developer based out in India. I create short
-        articles that help increase productivity.
+        articles that help increase{" "}
+        <span className={styles.highlight}>developer productivity</span>.
       </p>
-      <br />
       My Image
-      <br />
       <h3>
         <span className="text-primary font-black font-mono">Name:</span> Aaditey
         Nair
@@ -27,39 +26,41 @@ function About() {
         </span>{" "}
         He/Him
       </h3>
-      <br />
-      <div>
+      <div className={styles.container}>
         <h3>What is this blog?</h3>
         <p>
-          The name says it all: The Dev Log. Its a log of my projects, learnings
-          and mistakes. You get to see the process of building complex and
-          simple projects from start to finish in small easy to understand
-          chunks. No behind-the-scenes preparations. The actual journey of
-          software development.
+          The name says it all:{" "}
+          <span className={styles.highlight}>The Dev Log</span>. Its a log of my
+          projects, learnings and mistakes. You get to see the process of
+          building complex and simple projects from start to finish in small
+          easy to understand chunks. No behind-the-scenes preparations. The
+          actual journey of{" "}
+          <span className={styles.highlight}>software development</span>.
         </p>
       </div>
-      <div>
+      <div className={styles.container}>
         <h3>Who is this blog for?</h3>
         <p>
-          This blog is more the developers amoung us who get bored by the usual
+          This blog is for the developers among us who get bored by the usual
           todo lists and password managers. The ones who focus on concepts more
-          than syntax because anything you learn today *can* be obsolete
-          tomorrow. The only thing that stays constant is you problem-solving
-          skills. That is what software development is isn't it? Problem
-          Solving. That's what we are hired to do.
+          than syntax because anything you learn today <em>can</em> be{" "}
+          <strong>obsolete</strong> tomorrow. The only thing that stays constant
+          is you problem-solving skills. That is the essence software
+          development: <span className={styles.highlight}>problem solving</span>
+          .
         </p>
       </div>
-      <div>
+      <div className={styles.container}>
         <h3>Who the heck am I?</h3>
         <p>
           I am a writer, student, child and developer. I began my coding journey
           in the summer of 2020 with web development. I then progressed to
           Python and I plan on learning C++ soon. I am interested in AI/ML and
-          scripting. Outisde of programming I like to play badminton, read
+          scripting. Outside of programming, I like to play badminton, read
           books, eat food and make coffee.
         </p>
       </div>
-      <div>
+      <div className={styles.container}>
         <h3>How did I make this blog?</h3>
         <p>
           I guess some of you viewers will be interested in how I created 'The
@@ -85,7 +86,7 @@ function About() {
           The main component was Next.js, a React framework developed by Vercel.
           It used React in the frontend and Node as the backend. Instead of
           handling all the complicated things myself, I opted to using Firebase
-          as my storage and BaaS.
+          as my database and BaaS.
         </p>
       </div>
     </>
