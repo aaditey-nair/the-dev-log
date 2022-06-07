@@ -1,4 +1,5 @@
 import styles from "../styles/about.module.css";
+import Image from "next/image";
 
 function About() {
   return (
@@ -9,7 +10,15 @@ function About() {
         articles that help increase{" "}
         <span className={styles.highlight}>developer productivity</span>.
       </p>
-      My Image
+      <div className="relative h-96 w-96 my-4">
+        <Image
+          className="text-left"
+          src="/../public/images/aadi-picture.png"
+          alt="picture of aaditey nair"
+          layout="fill"
+          objectFit="contain"
+        />
+      </div>
       <h3>
         <span className="text-primary font-black font-mono">Name:</span> Aaditey
         Nair
