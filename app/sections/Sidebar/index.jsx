@@ -1,10 +1,6 @@
 import { useState } from "react";
 import FilesBar from "../../components/FilesBar";
-import {
-  faFolderClosed,
-  faHistory,
-  faSearch,
-} from "@fortawesome/free-solid-svg-icons";
+import { faFolderClosed, faHistory } from "@fortawesome/free-solid-svg-icons";
 import SidebarTab from "../../elements/SidebarTab";
 
 function Sidebar() {
@@ -21,12 +17,6 @@ function Sidebar() {
           handleClick={changeActiveTab}
           activeTab={activeTab}
           icon={faFolderClosed}
-        />
-        <SidebarTab
-          tabName="Search"
-          handleClick={changeActiveTab}
-          activeTab={activeTab}
-          icon={faSearch}
         />
         <SidebarTab
           tabName="History"
