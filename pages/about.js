@@ -93,9 +93,9 @@ function About() {
         </ul>
         <p>
           The main component was Next.js, a React framework developed by Vercel.
-          It used React in the frontend and Node as the backend. Instead of
+          It uses React in the frontend and Node as the backend. Instead of
           handling all the complicated things myself, I opted to using Firebase
-          as my database and BaaS.
+          as my database and Backend.
         </p>
       </div>
     </>
