@@ -1,6 +1,9 @@
 import { useState } from "react";
 import FilesBar from "../../components/FilesBar";
-import { faFolderClosed, faHistory } from "@fortawesome/free-solid-svg-icons";
+import {
+  faFolderClosed,
+  faBookBookmark,
+} from "@fortawesome/free-solid-svg-icons";
 import SidebarTab from "../../elements/SidebarTab";
 
 function Sidebar() {
@@ -19,10 +22,10 @@ function Sidebar() {
           icon={faFolderClosed}
         />
         <SidebarTab
-          tabName="History"
+          tabName="Bookmarks"
           handleClick={changeActiveTab}
           activeTab={activeTab}
-          icon={faHistory}
+          icon={faBookBookmark}
         />
       </div>
       <div className="pl-4 pt-4 space-y-2">
