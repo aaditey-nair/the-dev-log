@@ -6,8 +6,8 @@ function HomePage() {
   return (
     <>
       <header className="mt-8 mb-10">
-        <h1 className="text-8xl font-mono text-primary text-center font-black">
-          dev.log()
+        <h1 className="text-8xl font-mono tracking-[-0.02em] word-spacing-tight text-primary text-center font-black">
+          THE DEV LOG
         </h1>
         <p className="text-center mx-auto mt-4 text-light max-w-[80ch]">
           Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
