@@ -3,12 +3,18 @@ import CategoryLink from "../app/elements/CategoryLink";
 import NewsletterForm from "../app/components/NewsletterForm";
 
 function HomePage() {
+  const date = new Date();
+  const day = date.toLocaleDateString("en-US", { weekday: "long" });
+  const month = date.toLocaleDateString("en-US", { month: "long" });
   return (
     <>
       <header className="mt-8 mb-10">
         <h1 className="text-8xl font-mono tracking-[-0.02em] word-spacing-tight text-primary text-center font-black">
           THE DEV LOG
         </h1>
+        <p className="text-center tracking-wide font-mono">
+          {day}, {date.getDate()} {month}, {date.getFullYear()}
+        </p>
         <p className="text-center mx-auto mt-4 text-light max-w-[80ch]">
           Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
           eiusmod tempor incididunt ut labore et dolore magna aliqua.
