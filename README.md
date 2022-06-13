@@ -6,6 +6,7 @@ My Tech Stack
 
 Frontend:
 - React(Next.js)
+- Tailwind CSS
 
 Backend:
 - Node(Next.js)
@@ -13,4 +14,4 @@ Backend:
 
 Database:
 - Firestore
-- Firebase Storage
+- Firebase Cloud Storage
