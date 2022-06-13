@@ -1,5 +1,5 @@
 import "../styles/globals.css";
-import Window from "../app/templates/window";
+import Window from "../app/templates/Window";
 import Head from "next/head";
 
 function MyApp({ Component, pageProps, router }) {
