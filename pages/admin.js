@@ -4,7 +4,7 @@ import AdminPost from "../app/components/AdminPost";
 function Admin() {
   return (
     <>
-      <Link href="/admin/new-post">
+      <Link href="/admin/new">
         <a className="bg-primary max-w-max text-dark py-2 px-6 hover:bg-secondary transition-colors">
           New Post
         </a>
