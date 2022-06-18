@@ -4,7 +4,7 @@ function Admin() {
   return (
     <>
       <Link href="/admin/new-post">
-        <a className="bg-primary text-dark py-2 px-6 hover:bg-secondary transition-colors">
+        <a className="bg-primary max-w-max text-dark py-2 px-6 hover:bg-secondary transition-colors">
           New Post
         </a>
       </Link>
