@@ -1,5 +1,7 @@
 import SubmitPrimary from "../../app/elements/SubmitPrimary";
 import MdEditor from "../../app/components/MdEditor";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faPlus } from "@fortawesome/free-solid-svg-icons";
 
 function New() {
   return (
@@ -16,7 +18,19 @@ function New() {
         type="text"
         name="post-subtitle"
       />
-      <div className="col-span-full">
+      <div className="flex items-center">
+        <select className="bg-accent p-2 appearance-none">
+          <option>Select Collection</option>
+          <option>Category 1</option>
+          <option>Category 2</option>
+          <option>Category 3</option>
+        </select>
+        <FontAwesomeIcon
+          icon={faPlus}
+          className="text-light ml-2 p-2 bg-accent"
+        />
+      </div>
+      <div>
         <input
           type="checkbox"
           value="Published"
@@ -27,6 +41,15 @@ function New() {
         <label className="pl-2" for="published">
           Published
         </label>
+      </div>
+      <div className="col-span-full">
+        <h1 className="inline text-lg">Tags</h1>
+        <div className="flex gap-4 mt-2 text-dark">
+          <div className="px-2 py-1 bg-secondary">Python</div>
+          <div className="px-2 py-1 bg-secondary">AI/ML</div>
+          <div className="px-2 py-1 bg-secondary">Data Science</div>
+          <FontAwesomeIcon icon={faPlus} className="text-dark p-2 bg-primary" />
+        </div>
       </div>
       <MdEditor placeholder="# New Post" />
       <SubmitPrimary name="Create Post" />
