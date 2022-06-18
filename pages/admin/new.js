@@ -1,8 +1,7 @@
 import SubmitPrimary from "../../app/elements/SubmitPrimary";
-import { useState } from "react";
+import MdEditor from "../../app/components/MdEditor";
 
 function New() {
-  const [content, setContent] = useState("**Write a new Post**");
   return (
     <div className="grid grid-cols-2 gap-4">
       <input
@@ -29,16 +28,7 @@ function New() {
           Published
         </label>
       </div>
-      <div className="col-span-full grid grid-cols-2 gap-4">
-        <textarea
-          value={content}
-          onChange={(e) => {
-            setContent(e.target.value);
-          }}
-          className="bg-accent p-4 h-96 block"
-        ></textarea>
-        <textarea className="bg-accent p-4 h-96 block"></textarea>
-      </div>
+      <MdEditor placeholder="# New Post" />
       <SubmitPrimary name="Create Post" />
     </div>
   );
