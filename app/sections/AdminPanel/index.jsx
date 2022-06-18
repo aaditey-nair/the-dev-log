@@ -1,5 +1,4 @@
 import Link from "next/link";
-import SubmitPrimary from "../../elements/SubmitPrimary";
 
 function AdminPanel() {
   return (
