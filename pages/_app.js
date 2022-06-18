@@ -10,9 +10,9 @@ function MyApp({ Component, pageProps, router }) {
         <title>The Dev Log</title>
       </Head>
       {router.pathname.startsWith("/admin") ? (
-        <Admin>
+        <main className="bg-dark p-4 max-h-full flex-grow text-light flex flex-col">
           <Component {...pageProps} />
-        </Admin>
+        </main>
       ) : (
         <Window>
           <Component {...pageProps} />
