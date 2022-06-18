@@ -1,4 +1,5 @@
 import Link from "next/link";
+import AdminPost from "../app/components/AdminPost";
 
 function Admin() {
   return (
@@ -8,6 +9,10 @@ function Admin() {
           New Post
         </a>
       </Link>
+      <div className="mt-8">
+        <h1 className="text-xl font-black mb-4">All Posts</h1>
+        <AdminPost name="This is a Post" />
+      </div>
     </>
   );
 }
