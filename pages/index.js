@@ -21,11 +21,7 @@ function HomePage() {
         </p>
       </header>
       <div className="grid grid-cols-3 gap-4">
-        <article className="bg-secondary h-36 col-span-1"></article>
-        <article className="bg-primary h-36 col-span-2"></article>
-        <article className="bg-light h-36 col-span-2"></article>
-        <article className="bg-secondary h-36 col-span-1"></article>
-        <article className="bg-stripe h-36 col-span-full"></article>
+        <article className="bg-stripe h-96 col-span-full"></article>
         <div className="col-span-2 space-y-8">
           <TextBlogPreview />
           <TextBlogPreview />
