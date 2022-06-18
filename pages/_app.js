@@ -1,23 +1,23 @@
 import "../styles/globals.css";
 import Window from "../app/templates/Window";
 import Admin from "../app/templates/Admin";
+import Head from "next/head";
 
 function MyApp({ Component, pageProps, router }) {
-  if (router.pathname.startsWith("/admin")) {
-    return (
-      <>
+  return (
+    <>
+      <Head>
+        <title>The Dev Log</title>
+      </Head>
+      {router.pathname.startsWith("/admin") ? (
         <Admin>
           <Component {...pageProps} />
         </Admin>
-      </>
-    );
-  }
-
-  return (
-    <>
-      <Window>
-        <Component {...pageProps} />
-      </Window>
+      ) : (
+        <Window>
+          <Component {...pageProps} />
+        </Window>
+      )}
     </>
   );
 }
