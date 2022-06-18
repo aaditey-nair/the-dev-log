@@ -10,7 +10,14 @@ function Admin() {
         </a>
       </Link>
       <div className="mt-8">
-        <h1 className="text-xl font-black mb-4">All Posts</h1>
+        <h1 className="text-xl font-black mb-4">Unpublished Posts</h1>
+        <div className="grid grid-cols-5 gap-4">
+          <AdminPost name="This is a Post" />
+          <AdminPost name="This is a Post" />
+        </div>
+      </div>
+      <div className="mt-8">
+        <h1 className="text-xl font-black mb-4">Published Posts</h1>
         <div className="grid grid-cols-5 gap-4">
           <AdminPost name="This is a Post" />
           <AdminPost name="This is a Post" />
