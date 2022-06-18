@@ -9,9 +9,9 @@ function MdEditor({ placeholder }) {
         onChange={(e) => {
           setContent(e.target.value);
         }}
-        className="bg-accent p-4 max-h-96 block"
+        className="bg-accent p-4 block"
       ></textarea>
-      <textarea className="bg-accent p-4 h-96 block"></textarea>
+      <textarea className="bg-accent p-4 block"></textarea>
     </div>
   );
 }
