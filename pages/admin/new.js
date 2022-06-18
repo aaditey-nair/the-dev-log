@@ -1,8 +1,10 @@
 import SubmitPrimary from "../../app/elements/SubmitPrimary";
+import { useState } from "react";
 
 function New() {
+  const [content, setContent] = useState("**Write a new Post**");
   return (
-    <div className="space-y-4">
+    <div className="grid grid-cols-2 gap-4">
       <input
         className="min-w-full text-dark bg-light px-4 py-2 focus-within:border-0"
         placeholder="Post Title"
@@ -15,17 +17,28 @@ function New() {
         type="text"
         name="post-subtitle"
       />
-      <input
-        type="checkbox"
-        value="Published"
-        id="published"
-        name="post-status"
-        className="accent-primary"
-      />
-      <label className="pl-2" for="published">
-        Published
-      </label>
-      <br />
+      <div className="col-span-full">
+        <input
+          type="checkbox"
+          value="Published"
+          id="published"
+          name="post-status"
+          className="accent-primary"
+        />
+        <label className="pl-2" for="published">
+          Published
+        </label>
+      </div>
+      <div className="col-span-full grid grid-cols-2 gap-4">
+        <textarea
+          value={content}
+          onChange={(e) => {
+            setContent(e.target.value);
+          }}
+          className="bg-accent p-4 h-96 block"
+        ></textarea>
+        <textarea className="bg-accent p-4 h-96 block"></textarea>
+      </div>
       <SubmitPrimary name="Create Post" />
     </div>
   );
