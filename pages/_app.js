@@ -1,4 +1,5 @@
 import "../styles/globals.css";
+import "../styles/prism-theme.css";
 import Window from "../app/templates/Window";
 import Head from "next/head";
 
