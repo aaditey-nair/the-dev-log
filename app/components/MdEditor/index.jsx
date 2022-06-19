@@ -1,5 +1,5 @@
 import { useState } from "react";
-import ReactMarkdown from "react-markdown";
+import { renderMarkdown } from "../../utils";
 
 function MdEditor({ placeholder }) {
   const [content, setContent] = useState(placeholder);
@@ -12,11 +12,7 @@ function MdEditor({ placeholder }) {
         }}
         className="bg-accent p-4 block"
       ></textarea>
-      <ReactMarkdown
-        className="p-4 prose prose-headings:font-mono prose-headings:text-primary prose-p:text-light 
-        prose-strong:text-secondary prose-ul:text-light prose-ul:leading-snug prose-ol:text-light prose-ol:leading-snug "
-        children={content}
-      />
+      {renderMarkdown(content)}
     </div>
   );
 }
