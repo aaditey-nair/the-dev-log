@@ -6,17 +6,21 @@ import remarkGfm from "remark-gfm";
 import remarkRehype from "remark-rehype";
 import rehypePrism from "@mapbox/rehype-prism";
 import rehypeReact from "rehype-react/lib";
+import BlogLink from "../elements/BlogLink";
 
 function renderMarkdown(md) {
   const [content, setContent] = useState(Fragment);
   useEffect(() => {
-    console.log("convert md");
     unified()
       .use(remarkParse)
       .use(remarkGfm)
       .use(remarkRehype)
       .use(rehypePrism)
-      .use(rehypeReact, { createElement, Fragment })
+      .use(rehypeReact, {
+        createElement,
+        Fragment,
+        components: { a: BlogLink },
+      })
       .process(md)
       .then((output) => {
         setContent(output.result);
