@@ -1,35 +1,28 @@
-import { useState } from "react";
-import FilesBar from "../../components/FilesBar";
-import {
-  faFolderClosed,
-  faBookBookmark,
-} from "@fortawesome/free-solid-svg-icons";
-import SidebarTab from "../../elements/SidebarTab";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faFolderClosed } from "@fortawesome/free-solid-svg-icons";
+import SidebarFile from "../../elements/SidebarFile";
+import SidebarFolder from "../../components/SidebarFolder";
 
 function Sidebar() {
-  const [activeTab, setActiveTab] = useState("files");
-  function changeActiveTab(e, tab) {
-    e.preventDefault();
-    setActiveTab(tab);
-  }
   return (
     <>
       <div className="bg-accent">
-        <SidebarTab
-          tabName="Files"
-          handleClick={changeActiveTab}
-          activeTab={activeTab}
-          icon={faFolderClosed}
-        />
-        <SidebarTab
-          tabName="Bookmarks"
-          handleClick={changeActiveTab}
-          activeTab={activeTab}
-          icon={faBookBookmark}
-        />
+        <div className="max-w-max px-4 py-2 bg-dark">
+          <FontAwesomeIcon icon={faFolderClosed} />
+          <span className="pl-2">Files</span>
+        </div>
       </div>
-      <div className="pl-4 pt-4 space-y-2">
-        {activeTab == "files" && <FilesBar />}
+      <div className="ml-4 mt-4">
+        <span className="font-black text-base text-primary">THE-DEV-LOG</span>
+        <div className="space-y-2 ml-5 mt-2">
+          <SidebarFile href="/" fileName="home" />
+          <SidebarFile href="/about" fileName="about" />
+          <SidebarFolder folderName="posts">
+            <SidebarFile href="/posts/post1" fileName="post 1" />
+            <SidebarFile href="/" fileName="post 2" />
+            <SidebarFile href="/" fileName="post 3" />
+          </SidebarFolder>
+        </div>
       </div>
     </>
   );
