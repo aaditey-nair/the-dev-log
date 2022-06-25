@@ -40,7 +40,7 @@ function New() {
           name="post-status"
           className="accent-primary"
         />
-        <label className="pl-2" for="published">
+        <label className="pl-2" htmlFor="published">
           Published
         </label>
       </div>
