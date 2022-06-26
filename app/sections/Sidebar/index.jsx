@@ -7,9 +7,9 @@ function Sidebar() {
   return (
     <>
       <div className="bg-accent">
-        <div className="max-w-max px-4 py-2 bg-dark">
+        <div className="max-w-max px-4 pb-2 pt-3 bg-dark">
           <FontAwesomeIcon icon={faFolderClosed} />
-          <span className="pl-2">Files</span>
+          <span className="pl-2">Explorer</span>
         </div>
       </div>
       <div className="ml-4 mt-4">
