@@ -29,8 +29,8 @@ function renderMarkdown(md) {
   return (
     <div
       className="p-4 prose prose-invert prose-headings:font-mono prose-headings:text-primary prose-p:text-light 
-  prose-strong:text-secondary prose-ul:text-light prose-ul:leading-snug prose-ol:text-light prose-ol:leading-snug"
-    >
+  prose-strong:text-secondary prose-ul:text-light prose-ul:leading-snug prose-ol:text-light prose-ol:leading-snug prose-blockquote:text-thin prose-blockquote:text-xl"
+   >
       {content}
     </div>
   );
