@@ -10,8 +10,6 @@ Frontend:
 
 Backend:
 - Node(Next.js)
-- Firebase(BaaS)
-
-Database:
-- Firestore
-- Firebase Cloud Storage
+- Prisma(ORM)
+- MySQL(database)
+- PlanetScale(database provider)
