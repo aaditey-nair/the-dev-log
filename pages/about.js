@@ -7,8 +7,11 @@ function About() {
       <p className="mb-4">
         Welcome stranger, to my beautiful mess of a blog. <br />
         I'm Aadi, a teen full-stack developer based out in India. I create short
-        articles that help increase{" "}
-        <span className={styles.highlight}>developer productivity</span>.
+        articles that capture the{" "}
+        <span className={styles.highlight}>
+          journey of software development
+        </span>
+        .
       </p>
       <div className="relative h-96 w-96 my-4">
         <Image
@@ -43,20 +46,17 @@ function About() {
           projects, learnings and mistakes. You get to see the process of
           building complex and simple projects from start to finish in small
           easy to understand chunks. No behind-the-scenes preparations. The
-          actual journey of{" "}
+          actual experience of{" "}
           <span className={styles.highlight}>software development</span>.
         </p>
       </div>
       <div className={styles.container}>
         <h3>Who is this blog for?</h3>
         <p>
-          This blog is for the developers among us who get bored by the usual
-          todo lists and password managers. The ones who focus on concepts more
-          than syntax because anything you learn today <em>can</em> be{" "}
-          <strong>obsolete</strong> tomorrow. The only thing that stays constant
-          is you problem-solving skills. That is the essence software
-          development: <span className={styles.highlight}>problem solving</span>
-          .
+          This blog is for developers who are seeking inspiration for their own
+          projects. I also occasional cover a feature release or a tool.
+          Basically everything a developer would do every now and then. I will
+          also check out new concepts or ideas made for developers.
         </p>
       </div>
       <div className={styles.container}>
@@ -75,27 +75,24 @@ function About() {
           I guess some of you viewers will be interested in how I created 'The
           Dev Log'. The main tech stack is
         </p>
+        <br />
         Frontend
         <ul>
-          <li>React</li>
-          <li>Tailwind CSS</li>
+          <li>React(UI Library)</li>
+          <li>Tailwind CSS(Styling)</li>
         </ul>
         Backend
         <ul>
-          <li>Node.js</li>
-          <li>Firebase(BaaS)</li>
-          <li>Vercel(PaaS)</li>
-        </ul>
-        Database
-        <ul>
-          <li>Firestore</li>
-          <li>Firebase Cloud Storage</li>
+          <li>Node.js(Runtime)</li>
+          <li>MySQL(Database)</li>
+          <li>PlanetScale(Database Platform)</li>
+          <li>Prisma(ORM)</li>
         </ul>
         <p>
           The main component was Next.js, a React framework developed by Vercel.
-          It uses React in the frontend and Node as the backend. Instead of
-          handling all the complicated things myself, I opted to using Firebase
-          as my database and Backend.
+          It uses React in the frontend and Node as the backend. I used
+          PlanetScale as my database platform and MySQL comes with it. I
+          obviously also needed an ORM and for that I picked Prisma.
         </p>
       </div>
     </>
