@@ -4,6 +4,7 @@ import {
   faHandsClapping,
   faShare,
 } from "@fortawesome/free-solid-svg-icons";
+import { renderMarkdown } from "../../app/utils";
 
 function post1() {
   return (
@@ -15,82 +16,37 @@ function post1() {
         </h1>
         <p className="font-mono">June 13 2022 | 4 min read</p>
       </header>
-      <div className="grid grid-cols-4 my-8 gap-8">
-        <article className="space-y-4 col-span-3 text-justify">
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-            eiusmod tempor incididunt ut labore et dolore magna aliqua. Quam
-            quisque id diam vel quam elementum. Ut tortor pretium viverra
-            suspendisse potenti. Erat nam at lectus urna. Rhoncus mattis rhoncus
-            urna neque viverra. Ultricies mi eget mauris pharetra et.
-            Condimentum lacinia quis vel eros donec. Est pellentesque elit
-            ullamcorper dignissim cras tincidunt lobortis feugiat vivamus. Vitae
-            justo eget magna fermentum iaculis eu non diam phasellus. Eu non
-            diam phasellus vestibulum. Non nisi est sit amet facilisis magna
-            etiam tempor orci. Arcu cursus euismod quis viverra nibh cras
-            pulvinar. Mauris commodo quis imperdiet massa. Aliquet porttitor
-            lacus luctus accumsan. Ut sem viverra aliquet eget. Vitae congue eu
-            consequat ac felis donec et. Mi ipsum faucibus vitae aliquet nec
-            ullamcorper sit amet risus. Duis convallis convallis tellus id.
-          </p>
+      <div className="grid grid-cols-4 mt-8 gap-8">
+        <article className="space-y-4 col-span-3">
+          {renderMarkdown(`
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Et odio pellentesque diam volutpat commodo sed egestas egestas fringilla. Consectetur libero id faucibus nisl tincidunt eget nullam. Tristique senectus et netus et. Posuere urna nec tincidunt praesent semper. Habitasse platea dictumst quisque sagittis purus sit amet volutpat. Risus in hendrerit gravida rutrum quisque. Enim praesent elementum facilisis leo vel fringilla est ullamcorper eget. Scelerisque eu ultrices vitae auctor eu augue ut lectus arcu. Habitasse platea dictumst quisque sagittis purus sit amet. Faucibus pulvinar elementum integer enim neque volutpat ac tincidunt. Cursus eget nunc scelerisque viverra.
 
-          <p>
-            Cursus risus at ultrices mi tempus imperdiet nulla. Magna etiam
-            tempor orci eu. Dignissim diam quis enim lobortis scelerisque.
-            Tellus rutrum tellus pellentesque eu tincidunt tortor aliquam nulla
-            facilisi. Justo nec ultrices dui sapien eget mi proin. Id
-            consectetur purus ut faucibus pulvinar elementum integer. Fringilla
-            phasellus faucibus scelerisque eleifend donec pretium. Lobortis
-            scelerisque fermentum dui faucibus in ornare. Lectus proin nibh nisl
-            condimentum. Consequat semper viverra nam libero justo laoreet sit
-            amet cursus. Volutpat commodo sed egestas egestas fringilla
-            phasellus. Non diam phasellus vestibulum lorem sed risus ultricies
-            tristique. Id velit ut tortor pretium viverra suspendisse potenti
-            nullam. Mi proin sed libero enim sed.
-          </p>
+### javascript
+\`\`\`js
+function helloWorld() {
+  console.log("Hello World");
+}
+\`\`\`
+### python
+\`\`\`python
+def hello_world() {
+  print("Hello World")
+}
+\`\`\`
 
-          <p>
-            Tempus egestas sed sed risus pretium. Dui nunc mattis enim ut.
-            Integer malesuada nunc vel risus commodo. In cursus turpis massa
-            tincidunt dui. Volutpat lacus laoreet non curabitur gravida arcu ac
-            tortor. Mauris a diam maecenas sed enim ut sem viverra aliquet.
-            Neque vitae tempus quam pellentesque nec. Quam nulla porttitor massa
-            id neque aliquam vestibulum morbi. Condimentum mattis pellentesque
-            id nibh tortor id aliquet lectus. Facilisis leo vel fringilla est
-            ullamcorper eget. Quam elementum pulvinar etiam non quam lacus.
-            Sagittis orci a scelerisque purus semper. Luctus venenatis lectus
-            magna fringilla urna porttitor rhoncus. In hac habitasse platea
-            dictumst quisque sagittis. Semper viverra nam libero justo laoreet.
-            Amet nulla facilisi morbi tempus iaculis urna.
-          </p>
 
-          <p>
-            Fermentum iaculis eu non diam phasellus vestibulum lorem sed risus.
-            Sed euismod nisi porta lorem mollis aliquam ut. Eu turpis egestas
-            pretium aenean pharetra magna. Ut aliquam purus sit amet luctus
-            venenatis lectus magna. Eu nisl nunc mi ipsum faucibus vitae
-            aliquet. Tortor at auctor urna nunc. Amet mauris commodo quis
-            imperdiet massa tincidunt nunc. Pellentesque sit amet porttitor eget
-            dolor morbi non. Ut pharetra sit amet aliquam id diam maecenas
-            ultricies mi. Dolor sit amet consectetur adipiscing elit ut aliquam
-            purus sit. Sapien eget mi proin sed libero. Viverra justo nec
-            ultrices dui sapien eget mi proin. Feugiat sed lectus vestibulum
-            mattis. Aenean et tortor at risus viverra.
-          </p>
+* [ ] Create app
+* [ ] Finish app
+* [ ] Deploy app
 
-          <p>
-            A pellentesque sit amet porttitor eget dolor morbi non. Enim tortor
-            at auctor urna nunc id cursus metus. Ante metus dictum at tempor
-            commodo ullamcorper a lacus vestibulum. Vitae purus faucibus ornare
-            suspendisse sed nisi lacus sed. Ullamcorper eget nulla facilisi
-            etiam dignissim diam quis enim. Fermentum posuere urna nec tincidunt
-            praesent semper feugiat nibh. Id neque aliquam vestibulum morbi
-            blandit. Mattis enim ut tellus elementum sagittis vitae. Semper
-            viverra nam libero justo laoreet sit. Tincidunt arcu non sodales
-            neque sodales ut etiam. Nibh ipsum consequat nisl vel pretium
-            lectus. Pharetra diam sit amet nisl suscipit adipiscing bibendum
-            est. Feugiat in fermentum posuere urna nec.
-          </p>
+> Deploying apps is very important
+
+www.google.com is a must visit website.
+
+Velit dignissim sodales ut eu sem. Arcu felis bibendum ut tristique et egestas quis ipsum. Et malesuada fames ac turpis egestas integer eget. Vel quam elementum pulvinar etiam non quam lacus suspendisse. Auctor neque vitae tempus quam pellentesque nec nam aliquam. Ultricies integer quis auctor elit sed. Sed euismod nisi porta lorem mollis aliquam ut porttitor leo. Est ante in nibh mauris. Vel pretium lectus quam id leo in vitae. A lacus vestibulum sed arcu non odio euismod lacinia. Pulvinar sapien et ligula ullamcorper malesuada proin libero. Cum sociis natoque penatibus et. Felis imperdiet proin fermentum leo vel orci porta non. Adipiscing bibendum est ultricies integer quis auctor elit sed vulputate. Ullamcorper dignissim cras tincidunt lobortis feugiat vivamus at augue eget. In iaculis nunc sed augue lacus viverra vitae.
+
+Ut etiam sit amet nisl purus in. Eget mi proin sed libero enim sed faucibus turpis in. Lacus sed viverra tellus in hac habitasse. Aliquam purus sit amet luctus venenatis lectus magna fringilla urna. Id ornare arcu odio ut sem nulla pharetra. Sed elementum tempus egestas sed sed risus pretium. Nunc id cursus metus aliquam eleifend mi in nulla. Volutpat blandit aliquam etiam erat velit scelerisque. Amet purus gravida quis blandit turpis. Diam volutpat commodo sed egestas egestas fringilla. Venenatis lectus magna fringilla urna porttitor rhoncus dolor. Rutrum tellus pellentesque eu tincidunt tortor aliquam. Vitae auctor eu augue ut lectus. Laoreet non curabitur gravida arcu ac tortor. Nec nam aliquam sem et tortor consequat id.
+        `)}
         </article>
         <div className="sticky top-0">
           <div className="h-80 bg-primary mb-8"></div>
