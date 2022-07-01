@@ -16,7 +16,7 @@ function post1() {
         <p className="font-mono">June 13 2022 | 4 min read</p>
       </header>
       <div className="grid grid-cols-4 my-8 gap-8">
-        <article className="space-y-4 col-span-3">
+        <article className="space-y-4 col-span-3 text-justify">
           <p>
             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
             eiusmod tempor incididunt ut labore et dolore magna aliqua. Quam
@@ -93,7 +93,7 @@ function post1() {
           </p>
         </article>
         <div className="sticky top-0">
-          <div className="h-80 bg-primary mb-6"></div>
+          <div className="h-80 bg-primary mb-8"></div>
           <div className="flex justify-between font-mono">
             <p className="hover:text-primary cursor-pointer">
               <FontAwesomeIcon size="xl" icon={faComments} /> 69
