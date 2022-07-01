@@ -6,7 +6,7 @@ import {
   faHashtag,
   faDove,
   faEnvelopesBulk,
-  faCog,
+  faRss,
   faVolumeHigh,
   faRefresh,
 } from "@fortawesome/free-solid-svg-icons";
@@ -47,7 +47,7 @@ function Statusbar() {
         <a href="/sign-in">Log In</a>
         <a href="/sign-in">Log out</a>
         <FontAwesomeIcon size="sm" icon={faVolumeHigh} />
-        <FontAwesomeIcon size="sm" icon={faCog} />
+        <FontAwesomeIcon size="sm" icon={faRss} />
       </div>
     </nav>
   );
