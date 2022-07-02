@@ -13,7 +13,7 @@ const MdEditor = forwardRef(({ placeholder }, ref) => {
         }}
         className="bg-accent p-4 block overflow-auto"
       ></textarea>
-      <Markdown md={content} className="overflow-auto" />
+      <Markdown md={content} className="overflow-auto pr-4" />
     </div>
   );
 });
