@@ -5,11 +5,13 @@ Who doesn't want a blog? I know I do. So I decided to make one. After <em>pointl
 My Tech Stack
 
 Frontend:
+
 - React(Next.js)
 - Tailwind CSS
 
 Backend:
+
 - Node(Next.js)
-- Prisma(ORM)
 - MySQL(database)
-- PlanetScale(database provider)
+- Prisma(ORM)
+- PlanetScale(DbaaS Provider)

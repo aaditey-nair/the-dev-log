@@ -85,7 +85,7 @@ function About() {
         <ul>
           <li>Node.js(Runtime)</li>
           <li>MySQL(Database)</li>
-          <li>PlanetScale(Database Platform)</li>
+          <li>PlanetScale(DbaaS Platform)</li>
           <li>Prisma(ORM)</li>
         </ul>
         <p>
