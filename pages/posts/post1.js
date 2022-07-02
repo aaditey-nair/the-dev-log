@@ -43,23 +43,22 @@ function post1() {
         <h1 className="text-4xl my-4 font-black font-mono text-primary">
           This is the Post Title
         </h1>
-        <p className="font-mono">June 13 2022 | 4 min read</p>
+        <p className="font-mono">
+          June 13 2022 | 4 min read |{" "}
+          <span className="hover:text-primary cursor-pointer">
+            <FontAwesomeIcon icon={faShare} /> Share
+          </span>
+        </p>
       </header>
-      <div className="grid grid-cols-4 mt-8 gap-8">
-        <Markdown md={content} className="space-y-4 col-span-3" />
-        <div>
-          <div className="h-80 bg-primary mb-8"></div>
-          <div className="flex justify-between font-mono">
-            <p className="hover:text-primary cursor-pointer">
-              <FontAwesomeIcon size="xl" icon={faComments} /> 69
-            </p>
-            <p className="hover:text-primary cursor-pointer">
-              <FontAwesomeIcon size="xl" icon={faHandsClapping} /> 420
-            </p>
-            <p className="hover:text-primary cursor-pointer">
-              <FontAwesomeIcon size="xl" icon={faShare} /> Share
-            </p>
-          </div>
+      <Markdown md={content} className="space-y-4 col-span-3 mt-8" />
+      <div>
+        <div className="flex gap-8 my-4 font-mono">
+          <p className="hover:text-primary cursor-pointer">
+            <FontAwesomeIcon size="xl" icon={faComments} /> Comments
+          </p>
+          <p className="hover:text-primary cursor-pointer">
+            <FontAwesomeIcon size="xl" icon={faHandsClapping} /> 420
+          </p>
         </div>
       </div>
     </>
