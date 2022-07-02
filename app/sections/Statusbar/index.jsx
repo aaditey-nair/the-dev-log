@@ -12,6 +12,7 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 
 function Statusbar() {
+  const year = new Date().getFullYear();
   return (
     <nav className="px-4 py-1 h-full flex justify-between">
       <div className="flex items-center gap-4">
@@ -40,6 +41,7 @@ function Statusbar() {
         <a href="/" className="space-x-2 block">
           <FontAwesomeIcon size="sm" icon={faRefresh} />
         </a>
+        <span className="text-sm">Copyright © {year}</span>
       </div>
       <div className="flex items-center gap-4 text-sm">
         <span>Status: Logged Out</span>
