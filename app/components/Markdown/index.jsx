@@ -29,7 +29,7 @@ function Markdown({ md, className }) {
   return (
     <article
       className={
-        "prose max-w-screen-lg prose-invert prose-headings:font-mono prose-headings:text-primary prose-p:text-light text-justify prose-strong:text-secondary prose-ul:text-light prose-ul:leading-snug prose-ol:text-light prose-ol:leading-snug prose-blockquote:text-thin prose-blockquote:text-xl " +
+        "prose max-w-screen-lg prose-invert prose-headings:font-mono prose-headings:text-primary prose-p:text-light prose-strong:text-secondary prose-ul:text-light prose-ul:leading-snug prose-ol:text-light prose-ol:leading-snug prose-blockquote:text-thin prose-blockquote:text-xl " +
         className
       }
     >
