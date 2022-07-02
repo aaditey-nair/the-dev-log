@@ -45,7 +45,12 @@ function post1() {
         </h1>
         <p className="font-mono">
           June 13 2022 | 4 min read |{" "}
-          <span className="hover:text-primary cursor-pointer">
+          <span
+            onClick={() => {
+              navigator.clipboard.writeText(window.location.href)
+            }}
+            className="hover:text-primary cursor-pointer"
+          >
             <FontAwesomeIcon icon={faShare} /> Share
           </span>
         </p>
