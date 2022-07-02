@@ -1,5 +1,5 @@
 import { useState, forwardRef } from "react";
-import { renderMarkdown } from "../../utils";
+import Markdown from "../Markdown";
 
 const MdEditor = forwardRef(({ placeholder }, ref) => {
   const [content, setContent] = useState(placeholder);
@@ -13,7 +13,7 @@ const MdEditor = forwardRef(({ placeholder }, ref) => {
         }}
         className="bg-accent p-4 block overflow-auto"
       ></textarea>
-      <div className="overflow-auto">{renderMarkdown(content)}</div>
+      <Markdown md={content} className="overflow-auto" />
     </div>
   );
 });
