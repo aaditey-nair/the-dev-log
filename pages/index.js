@@ -15,10 +15,6 @@ function HomePage() {
         <p className="text-center tracking-wide font-mono">
           {day}, {date.getDate()} {month}, {date.getFullYear()}
         </p>
-        <p className="text-center mx-auto mt-4 text-light max-w-[80ch]">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-          eiusmod tempor incididunt ut labore et dolore magna aliqua.
-        </p>
       </header>
       <div className="grid grid-cols-3 gap-4">
         <article className="bg-stripe h-96 col-span-full"></article>
