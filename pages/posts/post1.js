@@ -48,7 +48,7 @@ Velit dignissim sodales ut eu sem. Arcu felis bibendum ut tristique et egestas q
 Ut etiam sit amet nisl purus in. Eget mi proin sed libero enim sed faucibus turpis in. Lacus sed viverra tellus in hac habitasse. Aliquam purus sit amet luctus venenatis lectus magna fringilla urna. Id ornare arcu odio ut sem nulla pharetra. Sed elementum tempus egestas sed sed risus pretium. Nunc id cursus metus aliquam eleifend mi in nulla. Volutpat blandit aliquam etiam erat velit scelerisque. Amet purus gravida quis blandit turpis. Diam volutpat commodo sed egestas egestas fringilla. Venenatis lectus magna fringilla urna porttitor rhoncus dolor. Rutrum tellus pellentesque eu tincidunt tortor aliquam. Vitae auctor eu augue ut lectus. Laoreet non curabitur gravida arcu ac tortor. Nec nam aliquam sem et tortor consequat id.
         `)}
         </article>
-        <div className="sticky top-0">
+        <div>
           <div className="h-80 bg-primary mb-8"></div>
           <div className="flex justify-between font-mono">
             <p className="hover:text-primary cursor-pointer">
