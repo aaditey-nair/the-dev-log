@@ -1,10 +1,21 @@
 generator client {
-  provider = "prisma-client-js"
+  provider        = "prisma-client-js"
   previewFeatures = ["referentialIntegrity"]
 }
 
 datasource db {
-  provider = "mysql"
-  url = env("DATABASE_URL")
+  provider             = "mysql"
+  url                  = env("DATABASE_URL")
   referentialIntegrity = "prisma"
+}
+
+model Blog {
+  id        Int      @id @default(autoincrement())
+  title     String
+  subtitle  String
+  createdAt DateTime @default(now())
+  published Boolean  @default(false)
+  likes     Int      @default(0)
+  content   String
+  // comments, tags, collections
 }
