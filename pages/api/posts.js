@@ -7,6 +7,8 @@ export default async function handler(req, res) {
     return await getPosts(req, res);
   } else if (req.method == "POST") {
     return await makePost(req, res);
+  } else if (req.method == "DELETE") {
+    return await deletePost(req, res);
   } else {
     return res
       .status(405)
@@ -43,5 +45,23 @@ async function makePost(req, res) {
     return res
       .status(500)
       .json({ error: "Error creating post", success: false });
+  }
+}
+
+async function deletePost(req, res) {
+  try {
+    const blogId = parseInt(req.query.id);
+    console.log(blogId);
+    const deletedPost = await prisma.blog.delete({
+      where: {
+        id: blogId,
+      },
+    });
+    return res.status(200).json(deletedPost, { success: true });
+  } catch (error) {
+    console.log("Error", error);
+    return res
+      .status(500)
+      .json({ error: "Error occured while deleting the post", success: false });
   }
 }
