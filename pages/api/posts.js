@@ -18,7 +18,18 @@ export default async function handler(req, res) {
 
 async function getPosts(req, res) {
   try {
-    const allPosts = await prisma.blog.findMany();
+    let allPosts;
+    if (req.query.published == "true") {
+      console.log("get only published posts");
+      allPosts = await prisma.blog.findMany({
+        where: {
+          published: true,
+        },
+      });
+      console.log(allPosts);
+    } else {
+      allPosts = await prisma.blog.findMany();
+    }
     return res.status(200).json(allPosts, { success: true });
   } catch (error) {
     console.log("Request error", error);
