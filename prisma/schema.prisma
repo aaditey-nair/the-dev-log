@@ -10,12 +10,38 @@ datasource db {
 }
 
 model Blog {
-  id        Int      @id @default(autoincrement())
-  title     String
-  subtitle  String
-  createdAt DateTime @default(now())
-  published Boolean  @default(false)
-  likes     Int      @default(0)
-  content   String
-  // comments, tags, collections
+  id             Int         @id @default(autoincrement())
+  title          String
+  slug           String
+  createdAt      DateTime    @default(now())
+  published      Boolean     @default(false)
+  liked          Int         @default(0)
+  tags           Json?
+  collection     Collection? @relation(fields: [collectionName], references: [name])
+  collectionName String?
+  path           String
+}
+
+model Collection {
+  id    Int    @id @default(autoincrement())
+  name  String @unique
+  posts Blog[]
+}
+
+model Comment {
+  id       Int    @id @default(autoincrement())
+  content  String
+  blogId   Int
+  user     User   @relation(fields: [userId, username], references: [id, name])
+  userId   Int
+  username String
+}
+
+model User {
+  id       Int       @id @default(autoincrement())
+  name     String
+  email    String    @unique
+  comments Comment[]
+
+  @@unique([id, name])
 }
