@@ -12,6 +12,7 @@ function New() {
       slug: "",
       tags: undefined,
       collection: undefined,
+      published: false,
     },
   });
   const editor = useRef(null);
@@ -77,6 +78,14 @@ function New() {
           id="published"
           name="post-status"
           className="accent-primary"
+          onChange={(e) => {
+            setPostData((prev) => ({
+              data: {
+                ...prev.data,
+                published: e.target.checked,
+              },
+            }));
+          }}
         />
         <label className="pl-2" htmlFor="published">
           Published
@@ -136,6 +145,7 @@ function New() {
             ...postData.data,
             path: editor.current.value,
           };
+          console.log(newPostData);
           axios.post("/api/posts", newPostData);
         }}
         name="Create Post"
