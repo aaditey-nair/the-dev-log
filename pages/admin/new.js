@@ -8,9 +8,9 @@ function New() {
   const [postData, setPostData] = useState({
     data: {
       title: "",
-      subtitle: "",
-      tags: [],
-      collection: "",
+      slug: "",
+      tags: undefined,
+      collection: undefined,
     },
   });
   const editor = useRef(null);
@@ -35,14 +35,14 @@ function New() {
           setPostData((prev) => ({
             data: {
               ...prev.data,
-              subtitle: e.target.value,
+              slug: e.target.value,
             },
           }));
         }}
         className="min-w-full text-dark bg-light px-4 py-2 focus-within:border-0"
-        placeholder="Post Subtitle"
+        placeholder="Post Slug"
         type="text"
-        name="post-subtitle"
+        name="post-slug"
       />
       <div className="flex items-center">
         <select
@@ -84,25 +84,26 @@ function New() {
       <div className="col-span-full">
         <h1 className="inline text-lg">Tags</h1>
         <div className="flex gap-4 mt-2 text-dark">
-          {postData.data.tags.map((tag) => {
-            return (
-              <div
-                onClick={() => {
-                  setPostData((prev) => ({
-                    data: {
-                      ...prev.data,
-                      tags: prev.data.tags.filter(
-                        (filterTag) => filterTag !== tag
-                      ),
-                    },
-                  }));
-                }}
-                className="px-2 py-1 bg-secondary"
-              >
-                {tag}
-              </div>
-            );
-          })}
+          {postData.data.tags &&
+            postData.data.tags.map((tag) => {
+              return (
+                <div
+                  onClick={() => {
+                    setPostData((prev) => ({
+                      data: {
+                        ...prev.data,
+                        tags: prev.data.tags.filter(
+                          (filterTag) => filterTag !== tag
+                        ),
+                      },
+                    }));
+                  }}
+                  className="px-2 py-1 bg-secondary"
+                >
+                  {tag}
+                </div>
+              );
+            })}
         </div>
         <form
           onSubmit={(e) => {
@@ -110,7 +111,9 @@ function New() {
             setPostData((prev) => ({
               data: {
                 ...prev.data,
-                tags: [...prev.data.tags, e.target[0].value],
+                tags: prev.data.tags
+                  ? [...prev.data.tags, e.target[0].value]
+                  : [e.target[0].value],
               },
             }));
           }}
@@ -130,7 +133,7 @@ function New() {
         handleSubmit={() => {
           const newPost = {
             ...postData.data,
-            content: editor.current.value,
+            path: editor.current.value,
           };
           console.log(newPost);
         }}
