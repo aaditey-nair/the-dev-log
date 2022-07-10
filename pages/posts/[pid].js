@@ -5,8 +5,12 @@ import {
   faShare,
 } from "@fortawesome/free-solid-svg-icons";
 import Markdown from "../../app/components/Markdown";
+import { useRouter } from "next/router";
 
-function post1() {
+function Post() {
+  const router = useRouter();
+  const pid = router.query.pid.toLowerCase();
+  console.log(pid);
   const content = `
   Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Et odio pellentesque diam volutpat commodo sed egestas egestas fringilla. Consectetur libero id faucibus nisl tincidunt eget nullam. Tristique senectus et netus et. Posuere urna nec tincidunt praesent semper. Habitasse platea dictumst quisque sagittis purus sit amet volutpat. Risus in hendrerit gravida rutrum quisque. Enim praesent elementum facilisis leo vel fringilla est ullamcorper eget. Scelerisque eu ultrices vitae auctor eu augue ut lectus arcu. Habitasse platea dictumst quisque sagittis purus sit amet. Faucibus pulvinar elementum integer enim neque volutpat ac tincidunt. Cursus eget nunc scelerisque viverra.
   
@@ -47,7 +51,7 @@ function post1() {
           June 13 2022 | 4 min read |{" "}
           <span
             onClick={() => {
-              navigator.clipboard.writeText(window.location.href)
+              navigator.clipboard.writeText(window.location.href);
             }}
             className="hover:text-primary cursor-pointer"
           >
@@ -70,4 +74,4 @@ function post1() {
   );
 }
 
-export default post1;
+export default Post;
