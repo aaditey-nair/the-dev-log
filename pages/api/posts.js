@@ -48,6 +48,7 @@ async function makePost(req, res) {
         slug: body.slug,
         tags: body.tags,
         path: body.path,
+        published: body.published,
       },
     });
     return res.status(200).json(newBlog, { success: true });
