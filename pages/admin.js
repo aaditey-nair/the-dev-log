@@ -1,5 +1,6 @@
 import Link from "next/link";
 import AdminPost from "../app/components/AdminPost";
+import CollectionForm from "../app/components/CollectionForm";
 
 function Admin() {
   return (
@@ -9,12 +10,7 @@ function Admin() {
           New Post
         </a>
       </Link>
-      <form className="my-2" action="/api/collection" method="POST">
-        <input className="py-2 px-1 mr-2 text-dark" name="collectionName" />
-        <button className="bg-primary max-w-max text-dark py-2 px-6 hover:bg-secondary transition-colors">
-          New Collection
-        </button>
-      </form>
+      <CollectionForm />
       <div className="mt-8">
         <h1 className="text-xl font-black mb-4">Unpublished Posts</h1>
         <div className="grid grid-cols-5 gap-4">
