@@ -18,19 +18,16 @@ export async function getServerSideProps(context) {
       title: postName,
     },
   });
-  post.createdAt = post.createdAt.toString();
+  post.createdAt = String(post.createdAt);
   return { props: { post } };
 }
 
 function Post({ post }) {
-  const content = post.path;
   return (
     <>
       <header>
         <div className="w-full h-80 bg-secondary"></div>
-        <h1 className="text-4xl my-4 font-black font-mono text-primary">
-          This is the Post Title
-        </h1>
+        <h1 className="text-5xl my-4 font-black text-primary">{post.title}</h1>
         <p className="font-mono">
           June 13 2022 | 4 min read |{" "}
           <span
@@ -43,14 +40,15 @@ function Post({ post }) {
           </span>
         </p>
       </header>
-      <Markdown md={content} className="space-y-4 col-span-3 mt-8" />
+      <Markdown md={post.path} className="space-y-4 col-span-3 mt-8" />
       <div>
         <div className="flex gap-8 my-4 font-mono">
           <p className="hover:text-primary cursor-pointer">
             <FontAwesomeIcon size="xl" icon={faComments} /> Comments
           </p>
           <p className="hover:text-primary cursor-pointer">
-            <FontAwesomeIcon size="xl" icon={faHandsClapping} /> 420
+            <FontAwesomeIcon size="xl" icon={faHandsClapping} />{" "}
+            {String(post.liked)}
           </p>
         </div>
       </div>
