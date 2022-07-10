@@ -51,7 +51,9 @@ function New() {
               data: {
                 ...prev.data,
                 collection:
-                  e.target.value == "Select Collection" ? "" : e.target.value,
+                  e.target.value == "Select Collection"
+                    ? undefined
+                    : e.target.value,
               },
             }));
           }}
