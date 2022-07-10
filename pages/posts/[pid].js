@@ -17,18 +17,21 @@ export async function getServerSideProps(context) {
       title: postName,
     },
   });
-  post.createdAt = String(post.createdAt);
+  post.createdAt = post.createdAt.toJSON();
   return { props: { post } };
 }
 
 function Post({ post }) {
+  let date = new Date(post.createdAt).toUTCString();
+  date = date.split(" ");
+  date = date.filter((item) => item != date[4]).join(" ");
   return (
     <>
       <header>
         <div className="w-full h-80 bg-secondary"></div>
         <h1 className="text-5xl my-4 font-black text-primary">{post.title}</h1>
         <p className="font-mono">
-          June 13 2022 | 4 min read |{" "}
+          {date} | 4 min read |{" "}
           <span
             onClick={() => {
               navigator.clipboard.writeText(window.location.href);
