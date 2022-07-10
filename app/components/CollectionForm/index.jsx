@@ -1,4 +1,5 @@
 import { useState } from "react";
+import axios from "axios";
 
 function CollectionForm() {
   const [collectionName, setCollectionName] = useState("");
@@ -10,7 +11,16 @@ function CollectionForm() {
         name="collectionName"
         value={collectionName}
       />
-      <button className="bg-primary max-w-max text-dark py-2 px-6 hover:bg-secondary transition-colors">
+      <button
+        onClick={(e) => {
+          e.preventDefault();
+          axios.post("/api/collection", {
+            collectionName: collectionName,
+          });
+          setCollectionName("");
+        }}
+        className="bg-primary max-w-max text-dark py-2 px-6 hover:bg-secondary transition-colors"
+      >
         New Collection
       </button>
     </div>
