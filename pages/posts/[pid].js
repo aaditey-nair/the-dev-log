@@ -10,7 +10,6 @@ import Markdown from "../../app/components/Markdown";
 import { PrismaClient } from "@prisma/client";
 
 export async function getServerSideProps(context) {
-  // const router = useRouter();
   const postName = context.query.pid;
   const prisma = new PrismaClient();
   const post = await prisma.blog.findFirst({
