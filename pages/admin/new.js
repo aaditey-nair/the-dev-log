@@ -3,6 +3,7 @@ import SubmitPrimary from "../../app/elements/SubmitPrimary";
 import MdEditor from "../../app/components/MdEditor";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPlus } from "@fortawesome/free-solid-svg-icons";
+import axios from "axios";
 
 function New() {
   const [postData, setPostData] = useState({
@@ -131,11 +132,11 @@ function New() {
       <MdEditor ref={editor} placeholder="# New Post" />
       <SubmitPrimary
         handleSubmit={() => {
-          const newPost = {
+          const newPostData = {
             ...postData.data,
             path: editor.current.value,
           };
-          console.log(newPost);
+          axios.post("/api/posts", newPostData);
         }}
         name="Create Post"
       />
