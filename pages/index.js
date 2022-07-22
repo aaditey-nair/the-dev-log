@@ -2,7 +2,31 @@ import TextBlogPreview from "../src/elements/TextBlogPreview";
 import CategoryLink from "../src/elements/CategoryLink";
 import NewsletterForm from "../src/components/NewsletterForm";
 
-function HomePage() {
+import { PrismaClient } from "@prisma/client";
+
+export async function getServerSideProps() {
+  const prisma = new PrismaClient();
+  const posts = await prisma.blog.findMany({
+    take: 9,
+    where: {
+      published: true,
+    },
+    orderBy: {
+      createdAt: "desc",
+    },
+  });
+  return {
+    props: {
+      posts: posts.map((post) => {
+        post.createdAt = post.createdAt.toJSON();
+        return post;
+      }),
+    },
+  };
+}
+
+function HomePage({ posts }) {
+  console.log(posts);
   const date = new Date();
   const day = date.toLocaleDateString("en-US", { weekday: "long" });
   const month = date.toLocaleDateString("en-US", { month: "long" });
