@@ -8,6 +8,7 @@ import {
 import Markdown from "../../src/components/Markdown";
 
 import { PrismaClient } from "@prisma/client";
+import { formatDate } from "../../src/utils";
 
 export async function getServerSideProps(context) {
   const postName = context.query.pid;
@@ -22,9 +23,7 @@ export async function getServerSideProps(context) {
 }
 
 function Post({ post }) {
-  let date = new Date(post.createdAt).toUTCString();
-  date = date.split(" ");
-  date = date.filter((item) => item != date[4]).join(" ");
+  const date = formatDate(post.createdAt);
   return (
     <>
       <header>
