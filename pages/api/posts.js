@@ -25,8 +25,10 @@ async function getPosts(req, res) {
         where: {
           published: true,
         },
+        orderBy: {
+          createdAt: "desc",
+        },
       });
-      console.log(allPosts);
     } else {
       allPosts = await prisma.blog.findMany();
     }
@@ -63,7 +65,6 @@ async function makePost(req, res) {
 async function deletePost(req, res) {
   try {
     const blogId = parseInt(req.query.id);
-    console.log(blogId);
     const deletedPost = await prisma.blog.delete({
       where: {
         id: blogId,
