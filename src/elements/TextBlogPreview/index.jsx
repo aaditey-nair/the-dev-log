@@ -6,12 +6,12 @@ function TextBlogPreview({ details }) {
   return (
     <article>
       <Link href={"/posts/" + details.title}>
-        <a className="hover:text-secondary block">
-          <h1 className="text-2xl font-black text-secondary mb-2">
+        <a className="group block">
+          <h1 className="text-2xl font-black text-light group-hover:text-secondary">
             {details.title}
           </h1>
-          <p>{details.slug}</p>
-          <p className="mt-4 text-sm text-primary">{date}</p>
+          <p className="mt-3 mb-1">{details.slug}</p>
+          <p className="text-sm text-primary font-mono">{date}</p>
         </a>
       </Link>
     </article>
