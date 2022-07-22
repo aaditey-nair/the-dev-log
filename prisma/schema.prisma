@@ -12,7 +12,7 @@ datasource db {
 model Blog {
   id             Int         @id @default(autoincrement())
   title          String
-  slug           String
+  slug           String      @db.VarChar(500)
   createdAt      DateTime    @default(now())
   published      Boolean     @default(false)
   liked          Int         @default(0)
