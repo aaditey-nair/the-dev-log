@@ -11,7 +11,7 @@ import { PrismaClient } from "@prisma/client";
 import { formatDate } from "../../src/utils";
 
 export async function getServerSideProps(context) {
-  const postName = context.query.pid;
+  const postName = context.query.name;
   const prisma = new PrismaClient();
   const post = await prisma.blog.findFirst({
     where: {
