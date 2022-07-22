@@ -43,10 +43,14 @@ function HomePage({ posts }) {
       <div className="grid grid-cols-3 gap-4">
         <article className="bg-stripe h-96 col-span-full"></article>
         <div className="col-span-2 space-y-8">
-          <TextBlogPreview />
-          <TextBlogPreview />
-          <TextBlogPreview />
-          <TextBlogPreview />
+          {posts.map((post) => {
+            return (
+              <TextBlogPreview
+                key={post.title + new Date().getTime()}
+                details={post}
+              />
+            );
+          })}
         </div>
         <div className="space-y-4">
           <div className="bg-secondary p-2 flex flex-wrap gap-2">
