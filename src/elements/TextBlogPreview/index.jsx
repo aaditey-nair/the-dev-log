@@ -1,6 +1,8 @@
 import Link from "next/link";
+import { formatDate } from "../../utils";
 
 function TextBlogPreview({ details }) {
+  const date = formatDate(details.createdAt);
   return (
     <article>
       <Link href={"/posts/" + details.title}>
@@ -9,7 +11,7 @@ function TextBlogPreview({ details }) {
             {details.title}
           </h1>
           <p>{details.slug}</p>
-          <p className="mt-4 text-sm text-primary">{details.createdAt}</p>
+          <p className="mt-4 text-sm text-primary">{date}</p>
         </a>
       </Link>
     </article>
