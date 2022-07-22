@@ -8,7 +8,7 @@ function CategoryLink({ name }) {
         query: { cat: name.toLowerCase().replace("/", "_").replace(" ", "-") },
       }}
     >
-      <a className="bg-dark hover:bg-stripe cursor-pointer inline-flex py-2 px-4 hover:scale-90 transition-transform">
+      <a className="bg-accent hover:bg-stripe cursor-pointer inline-flex py-2 px-4 hover:scale-90 transition-transform">
         {name}
       </a>
     </Link>
