@@ -1,6 +1,6 @@
 import Link from "next/link";
-import AdminPost from "../app/components/AdminPost";
-import CollectionForm from "../app/components/CollectionForm";
+import AdminPost from "../src/components/AdminPost";
+import CollectionForm from "../src/components/CollectionForm";
 
 function Admin() {
   return (

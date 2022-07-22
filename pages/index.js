@@ -1,6 +1,6 @@
-import TextBlogPreview from "../app/elements/TextBlogPreview";
-import CategoryLink from "../app/elements/CategoryLink";
-import NewsletterForm from "../app/components/NewsletterForm";
+import TextBlogPreview from "../src/elements/TextBlogPreview";
+import CategoryLink from "../src/elements/CategoryLink";
+import NewsletterForm from "../src/components/NewsletterForm";
 
 function HomePage() {
   const date = new Date();

@@ -1,6 +1,6 @@
 import { useRef, useState } from "react";
-import SubmitPrimary from "../../app/elements/SubmitPrimary";
-import MdEditor from "../../app/components/MdEditor";
+import SubmitPrimary from "../../src/elements/SubmitPrimary";
+import MdEditor from "../../src/components/MdEditor";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPlus } from "@fortawesome/free-solid-svg-icons";
 import axios from "axios";

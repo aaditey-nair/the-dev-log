@@ -5,7 +5,7 @@ import {
   faShare,
 } from "@fortawesome/free-solid-svg-icons";
 
-import Markdown from "../../app/components/Markdown";
+import Markdown from "../../src/components/Markdown";
 
 import { PrismaClient } from "@prisma/client";
 
