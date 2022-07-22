@@ -1,9 +1,12 @@
+import { useState, useEffect } from "react";
+
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faFolderClosed } from "@fortawesome/free-solid-svg-icons";
 import SidebarFile from "../../elements/SidebarFile";
 import SidebarFolder from "../../components/SidebarFolder";
 
 function Sidebar() {
+  const [posts, setPosts] = useState([]);
   return (
     <>
       <div className="bg-accent">
@@ -18,9 +21,16 @@ function Sidebar() {
           <SidebarFile href="/" fileName="home" />
           <SidebarFile href="/about" fileName="about" />
           <SidebarFolder folderName="posts">
-            <SidebarFile href="/posts/post1" fileName="post 1" />
-            <SidebarFile href="/" fileName="post 2" />
-            <SidebarFile href="/" fileName="post 3" />
+            {posts &&
+              posts.map((post) => {
+                return (
+                  <SidebarFile
+                    key={post.title}
+                    href="/posts/post1"
+                    fileName="post 1"
+                  />
+                );
+              })}
           </SidebarFolder>
         </div>
       </div>
