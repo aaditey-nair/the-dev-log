@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import axios from "axios";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faFolderClosed } from "@fortawesome/free-solid-svg-icons";
@@ -7,6 +8,16 @@ import SidebarFolder from "../../components/SidebarFolder";
 
 function Sidebar() {
   const [posts, setPosts] = useState([]);
+  useEffect(() => {
+    axios
+      .get("/api/posts", {
+        params: { published: true },
+      })
+      .then((res) => {
+        console.log(res.data);
+        setPosts(res.data);
+      });
+  }, []);
   return (
     <>
       <div className="bg-accent">
@@ -26,8 +37,8 @@ function Sidebar() {
                 return (
                   <SidebarFile
                     key={post.title}
-                    href="/posts/post1"
-                    fileName="post 1"
+                    href={"/posts/" + post.title}
+                    fileName={post.title}
                   />
                 );
               })}
