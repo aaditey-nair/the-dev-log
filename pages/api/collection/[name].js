@@ -13,12 +13,25 @@ export default async function handler(req, res) {
 
 async function updateCollection(req, res) {
   try {
+    console.log(req.query.name);
+    const updatedCollection = await prisma.collection.update({
+      where: {
+        name: req.query.name,
+      },
+      data: {
+        posts: {
+          connect: {
+            id: parseInt(req.body.postId),
+          },
+        },
+      },
+    });
+    return res.status(200).json(updatedCollection, { success: true });
   } catch (error) {
-    return res
-      .status(500)
-      .json({
-        error: "An error occured while updating the collection",
-        success: false,
-      });
+    console.log(error);
+    return res.status(500).json({
+      error: "An error occured while updating the collection",
+      success: false,
+    });
   }
 }
