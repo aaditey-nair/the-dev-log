@@ -152,8 +152,12 @@ function New() {
             ...postData.data,
             path: editor.current.value,
           };
+          delete newPostData.collection;
           console.log(newPostData);
-          axios.post("/api/posts", newPostData);
+          axios.post("/api/posts", newPostData).then((res) => {
+            const postId = res.data.id;
+            console.log(postId);
+          });
         }}
         name="Create Post"
       />
