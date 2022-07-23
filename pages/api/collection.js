@@ -33,16 +33,25 @@ async function createCollection(req, res) {
 
 async function getAllCollections(req, res) {
   try {
-    const collections = await prisma.collection.findMany({
-      select: {
-        name: true,
-        posts: {
-          select: {
-            title: req.query.posts === "true",
+    let collections;
+    if (req.query.posts === "true") {
+      collections = await prisma.collection.findMany({
+        select: {
+          name: true,
+          posts: {
+            select: {
+              title: true,
+            },
           },
         },
-      },
-    });
+      });
+    } else {
+      collections = await prisma.collection.findMany({
+        select: {
+          name: true,
+        },
+      });
+    }
     return res.status(200).json(collections, { success: true });
   } catch (error) {
     console.log(error);
