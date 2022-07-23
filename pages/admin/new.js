@@ -1,4 +1,4 @@
-import { useRef, useState } from "react";
+import { useRef, useState, useEffect } from "react";
 import SubmitPrimary from "../../src/elements/SubmitPrimary";
 import MdEditor from "../../src/components/MdEditor";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -6,6 +6,14 @@ import { faPlus } from "@fortawesome/free-solid-svg-icons";
 import axios from "axios";
 
 function New() {
+  const [collections, setCollections] = useState([]);
+  useEffect(() => {
+    axios.get("/api/collection", { posts: false }).then((res) => {
+      setCollections(res.data);
+      console.log(collections);
+    });
+  }, []);
+
   const [postData, setPostData] = useState({
     data: {
       title: "",
