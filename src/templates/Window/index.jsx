@@ -4,11 +4,11 @@ import Sidebar from "../../sections/Sidebar";
 
 function Window({ children }) {
   return (
-    <div className="grid grid-cols-12 grid-rows-[repeat(22,_minmax(0,_1fr))] min-h-screen max-h-screen">
-      <section className="bg-dark text-light col-span-2 row-span-full font-mono border-r-2 border-stripe">
+    <div className="grid grid-cols-[repeat(24,_minmax(0,_1fr))] grid-rows-[repeat(22,_minmax(0,_1fr))] min-h-screen max-h-screen">
+      <section className="bg-dark text-light col-span-5 row-span-full font-mono border-r-2 border-stripe">
         <Sidebar />
       </section>
-      <section className="text-light col-span-full row-span-full col-start-3 flex flex-col overflow-hidden">
+      <section className="text-light col-span-full row-span-full col-start-6 flex flex-col overflow-hidden">
         <PageHeader />
         <main className="bg-dark p-4 max-h-full flex-grow overflow-auto">
           {children}
