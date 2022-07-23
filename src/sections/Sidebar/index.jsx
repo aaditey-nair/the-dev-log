@@ -8,14 +8,14 @@ import SidebarFolder from "../../components/SidebarFolder";
 
 function Sidebar() {
   const [posts, setPosts] = useState([]);
+  const [collectionData, setCollectionData] = useState([]);
   useEffect(() => {
-    axios
-      .get("/api/posts", {
-        params: { published: true },
-      })
-      .then((res) => {
-        setPosts(res.data);
-      });
+    axios.get("/api/posts", { params: { published: true } }).then((res) => {
+      setPosts(res.data);
+    });
+    axios.get("/api/collection", { params: { posts: true } }).then((res) => {
+      setCollectionData(res.data);
+    });
   }, []);
   return (
     <>
@@ -30,6 +30,17 @@ function Sidebar() {
         <div className="space-y-2 ml-5 mt-2">
           <SidebarFile href="/" fileName="home" />
           <SidebarFile href="/about" fileName="about" />
+          <SidebarFolder folderName="collections">
+            {collectionData &&
+              collectionData.map((collection) => {
+                return (
+                  <SidebarFolder
+                    key={collection.name}
+                    folderName={collection.name}
+                  ></SidebarFolder>
+                );
+              })}
+          </SidebarFolder>
           <SidebarFolder folderName="posts">
             {posts &&
               posts.map((post) => {
