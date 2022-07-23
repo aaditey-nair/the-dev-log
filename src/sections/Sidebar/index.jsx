@@ -27,7 +27,7 @@ function Sidebar() {
       </div>
       <div className="ml-4 mt-4">
         <span className="font-black text-base text-primary">THE-DEV-LOG</span>
-        <div className="space-y-2 mt-2">
+        <nav className="space-y-2 mt-2">
           <SidebarFile href="/" fileName="home" />
           <SidebarFile href="/about" fileName="about" />
           <SidebarFolder folderName="collections">
@@ -63,7 +63,7 @@ function Sidebar() {
                 );
               })}
           </SidebarFolder>
-        </div>
+        </nav>
       </div>
     </>
   );
