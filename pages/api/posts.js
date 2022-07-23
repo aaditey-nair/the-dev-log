@@ -1,4 +1,6 @@
 import { PrismaClient } from "@prisma/client";
+const fs = require("fs");
+const path = require("path");
 
 const prisma = new PrismaClient();
 
@@ -44,12 +46,24 @@ async function getPosts(req, res) {
 async function makePost(req, res) {
   const body = req.body;
   try {
+    const filePath = path.join(
+      __dirname,
+      "..",
+      "..",
+      "..",
+      "..",
+      "posts",
+      body.title + ".md"
+    );
+    fs.writeFile(filePath, body.path, (err) => {
+      if (err) throw err;
+    });
     const newBlog = await prisma.blog.create({
       data: {
         title: body.title,
         slug: body.slug,
         tags: body.tags,
-        path: body.path,
+        path: filePath,
         published: body.published,
       },
     });
