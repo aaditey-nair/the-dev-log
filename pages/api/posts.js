@@ -22,7 +22,6 @@ async function getPosts(req, res) {
   try {
     let allPosts;
     if (req.query.published == "true") {
-      console.log("get only published posts");
       allPosts = await prisma.blog.findMany({
         where: {
           published: true,

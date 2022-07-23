@@ -19,7 +19,6 @@ function TextBlogPreview({ details }) {
       {details.tags && (
         <div className="flex flex-wrap gap-2">
           {details.tags.map((tag) => {
-            console.log(tag);
             return <CategoryLink name={tag} />;
           })}
         </div>

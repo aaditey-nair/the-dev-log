@@ -22,7 +22,6 @@ function NewsletterForm() {
       setErrors((prev) => [prev[0], "Invalid email address"]);
     } else {
       setErrors((prev) => [prev[0], ""]);
-      console.log(email.current.value);
     }
   }
 
