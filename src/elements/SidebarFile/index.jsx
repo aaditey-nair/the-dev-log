@@ -7,17 +7,17 @@ import { faFile } from "@fortawesome/free-solid-svg-icons";
 const SidebarFile = ({ fileName, href }) => {
   const [tooltipVisibility, setTooltipVisibility] = useState(false);
   return (
-    <div
-      onMouseOver={() => {
-        setTooltipVisibility(true);
-      }}
-      onMouseOut={() => {
-        setTooltipVisibility(false);
-      }}
-      className="relative ml-2"
-    >
+    <div className="relative ml-2">
       <Link href={href}>
-        <a className="block whitespace-nowrap text-ellipsis overflow-hidden">
+        <a
+          onMouseOver={() => {
+            setTooltipVisibility(true);
+          }}
+          onMouseOut={() => {
+            setTooltipVisibility(false);
+          }}
+          className="block max-w-max whitespace-nowrap text-ellipsis overflow-hidden"
+        >
           <FontAwesomeIcon className="pr-2" size="lg" icon={faFile} />
           {fileName}
         </a>
