@@ -52,6 +52,7 @@ async function makePost(req, res) {
       "..",
       "..",
       "..",
+      "public",
       "posts",
       body.title + ".md"
     );
