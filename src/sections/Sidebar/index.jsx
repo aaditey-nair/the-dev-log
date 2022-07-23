@@ -37,7 +37,17 @@ function Sidebar() {
                   <SidebarFolder
                     key={collection.name}
                     folderName={collection.name}
-                  ></SidebarFolder>
+                  >
+                    {collection.posts.map((post) => {
+                      return (
+                        <SidebarFile
+                          key={post.title + collection.name}
+                          fileName={post.title}
+                          href={"/posts/" + post.title}
+                        />
+                      );
+                    })}
+                  </SidebarFolder>
                 );
               })}
           </SidebarFolder>
