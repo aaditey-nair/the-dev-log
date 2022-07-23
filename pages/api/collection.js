@@ -36,7 +36,11 @@ async function getAllCollections(req, res) {
     const collections = await prisma.collection.findMany({
       select: {
         name: true,
-        posts: req.query.posts === "true",
+        posts: {
+          select: {
+            title: req.query.posts === "true",
+          },
+        },
       },
     });
     return res.status(200).json(collections, { success: true });
