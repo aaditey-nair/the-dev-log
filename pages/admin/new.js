@@ -156,7 +156,9 @@ function New() {
           console.log(newPostData);
           axios.post("/api/posts", newPostData).then((res) => {
             const postId = res.data.id;
-            console.log(postId);
+            axios.patch(`/api/collection/${postData.data.collection}`, {
+              postId: postId,
+            });
           });
         }}
         name="Create Post"
