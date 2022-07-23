@@ -14,7 +14,7 @@ const SidebarFile = ({ fileName, href }) => {
       onMouseOut={() => {
         setTooltipVisibility(false);
       }}
-      className="relative"
+      className="relative ml-2"
     >
       <Link href={href}>
         <a className="block whitespace-nowrap text-ellipsis overflow-hidden">

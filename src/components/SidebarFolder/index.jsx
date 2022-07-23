@@ -9,7 +9,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 function SidebarFolder({ folderName, children }) {
   const [open, setOpen] = useState(false);
   return (
-    <div className="space-y-2">
+    <div className="space-y-2 ml-2">
       <div
         onClick={(e) => {
           e.preventDefault();
