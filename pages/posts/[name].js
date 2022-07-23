@@ -8,6 +8,7 @@ import {
 import Markdown from "../../src/components/Markdown";
 
 import { PrismaClient } from "@prisma/client";
+const fs = require("fs");
 import { formatDate } from "../../src/utils";
 
 export async function getServerSideProps(context) {
@@ -19,6 +20,7 @@ export async function getServerSideProps(context) {
     },
   });
   post.createdAt = post.createdAt.toJSON();
+  post.content = fs.readFileSync(post.path).toString();
   return { props: { post } };
 }
 
@@ -41,7 +43,7 @@ function Post({ post }) {
           </span>
         </p>
       </header>
-      <Markdown md={post.path} className="space-y-4 col-span-3 mt-8" />
+      <Markdown md={post.content} className="space-y-4 col-span-3 mt-8" />
       <div>
         <div className="flex gap-8 my-4 font-mono">
           <p className="hover:text-primary cursor-pointer">
