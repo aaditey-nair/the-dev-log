@@ -153,12 +153,13 @@ function New() {
             path: editor.current.value,
           };
           delete newPostData.collection;
-          console.log(newPostData);
           axios.post("/api/posts", newPostData).then((res) => {
             const postId = res.data.id;
-            axios.patch(`/api/collection/${postData.data.collection}`, {
-              postId: postId,
-            });
+            if (postData.data.collection) {
+              axios.patch(`/api/collection/${postData.data.collection}`, {
+                postId: postId,
+              });
+            }
           });
         }}
         name="Create Post"
