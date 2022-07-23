@@ -10,7 +10,6 @@ function New() {
   useEffect(() => {
     axios.get("/api/collection", { posts: false }).then((res) => {
       setCollections(res.data);
-      console.log(collections);
     });
   }, []);
 
@@ -70,9 +69,9 @@ function New() {
           className="bg-accent p-2 appearance-none"
         >
           <option>Select Collection</option>
-          <option>Category 1</option>
-          <option>Category 2</option>
-          <option>Category 3</option>
+          {collections.map((collection) => {
+            return <option key={collection.name}>{collection.name}</option>;
+          })}
         </select>
         <FontAwesomeIcon
           icon={faPlus}
