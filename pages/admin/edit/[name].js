@@ -6,24 +6,36 @@ import { faPlus } from "@fortawesome/free-solid-svg-icons";
 import { PrismaClient } from "@prisma/client";
 import axios from "axios";
 
-export async function getServerSideProps() {
+export async function getServerSideProps(ctx) {
   const prisma = new PrismaClient();
   const collections = await prisma.collection.findMany({
     select: {
       name: true,
     },
   });
-  return { props: { collections: collections } };
+  const post = await prisma.blog.findFirst({
+    where: {
+      title: ctx.query.name,
+    },
+    select: {
+      title: true,
+      slug: true,
+      tags: true,
+      collectionName: true,
+      published: true,
+    },
+  });
+  return { props: { collections: collections, data: post } };
 }
 
-function Edit({ collections }) {
+function Edit({ collections, data }) {
   const [postData, setPostData] = useState({
     data: {
-      title: "",
-      slug: "",
-      tags: undefined,
-      collection: undefined,
-      published: false,
+      title: data.title,
+      slug: data.slug,
+      tags: data.tags,
+      collection: data.collectionName,
+      published: data.published,
     },
   });
   const editor = useRef(null);
@@ -38,6 +50,7 @@ function Edit({ collections }) {
             },
           }));
         }}
+        value={postData.data.title}
         className="min-w-full text-dark bg-light px-4 py-2 focus-within:border-0"
         placeholder="Post Title"
         type="text"
@@ -52,6 +65,7 @@ function Edit({ collections }) {
             },
           }));
         }}
+        value={postData.data.slug}
         className="min-w-full text-dark bg-light px-4 py-2 focus-within:border-0"
         placeholder="Post Slug"
         type="text"
@@ -70,6 +84,7 @@ function Edit({ collections }) {
               },
             }));
           }}
+          value={postData.data.collection}
           className="bg-accent p-2 appearance-none"
         >
           <option>Select Collection</option>
@@ -86,6 +101,7 @@ function Edit({ collections }) {
         <input
           type="checkbox"
           value="Published"
+          checked={postData.data.published}
           id="published"
           name="post-status"
           className="accent-primary"
