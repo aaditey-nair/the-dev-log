@@ -174,10 +174,10 @@ function Edit({ collections, data }) {
         handleSubmit={() => {
           const newPostData = {
             ...postData.data,
-            path: editor.current.value,
+            content: editor.current.value,
           };
           delete newPostData.collection;
-          axios.put("/api/posts" + data.title, newPostData);
+          axios.put("/api/posts/" + data.title, newPostData);
           // .then((res) => {
           // const postId = res.data.id;
           // if (postData.data.collection) {

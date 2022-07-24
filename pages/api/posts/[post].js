@@ -1,4 +1,6 @@
 import { PrismaClient } from "@prisma/client";
+const fs = require("fs");
+const path = require("path");
 
 const prisma = new PrismaClient();
 
@@ -35,6 +37,33 @@ async function getPost(req, res) {
 
 async function updatePost(req, res) {
   try {
+    const { title, slug, tags, published, content } = req.body;
+    const filePath = path.join(
+      __dirname,
+      "..",
+      "..",
+      "..",
+      "..",
+      "..",
+      "public",
+      "posts"
+    );
+    fs.writeFile(filePath + "/" + title + ".md", content, (err) => {
+      if (err) throw err;
+    });
+    const updatedPost = await prisma.blog.update({
+      where: {
+        title: req.query.post,
+      },
+      data: {
+        title: title,
+        slug: slug,
+        tags: tags ? tags : undefined,
+        published: published,
+        path: filePath,
+      },
+    });
+    return res.status(200).json(updatedPost, { success: true });
   } catch (error) {
     console.log(error);
     return res.status(500).json({
