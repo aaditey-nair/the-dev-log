@@ -1,4 +1,4 @@
-import { useRef, useState, useEffect } from "react";
+import { useRef, useState } from "react";
 import SubmitPrimary from "../../src/elements/SubmitPrimary";
 import MdEditor from "../../src/components/MdEditor";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
