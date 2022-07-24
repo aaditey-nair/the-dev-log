@@ -1,8 +1,29 @@
 import Link from "next/link";
 import AdminPost from "../src/components/AdminPost";
 import CollectionForm from "../src/components/CollectionForm";
+import { PrismaClient } from "@prisma/client";
 
-function Admin() {
+export async function getServerSideProps() {
+  const prisma = new PrismaClient();
+  const posts = await prisma.blog.findMany({
+    select: {
+      id: true,
+      title: true,
+      path: true,
+      published: true,
+    },
+  });
+  const publishedPosts = posts.filter((post) => post.published);
+  const unpublishedPosts = posts.filter((post) => !post.published);
+  return {
+    props: {
+      publishedPosts: publishedPosts,
+      unpublishedPosts: unpublishedPosts,
+    },
+  };
+}
+
+function Admin({ publishedPosts, unpublishedPosts }) {
   return (
     <>
       <Link href="/admin/new">
