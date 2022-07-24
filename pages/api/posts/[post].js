@@ -7,6 +7,8 @@ export default async function handler(req, res) {
     return await getPost(req, res);
   } else if (req.method === "DELETE") {
     return await deletePost(req, res);
+  } else if (req.method === "PUT") {
+    return await updatePost(req, res);
   } else {
     return res
       .status(403)
@@ -22,6 +24,17 @@ async function getPost(req, res) {
       },
     });
     return res.status(200).json(post, { success: true });
+  } catch (error) {
+    console.log(error);
+    return res.status(500).json({
+      error: "An error occured while fetching the post",
+      success: false,
+    });
+  }
+}
+
+async function updatePost(req, res) {
+  try {
   } catch (error) {
     console.log(error);
     return res.status(500).json({
