@@ -13,9 +13,11 @@ function Sidebar() {
     axios.get("/api/posts", { params: { published: true } }).then((res) => {
       setPosts(res.data);
     });
-    axios.get("/api/collection", { params: { posts: true } }).then((res) => {
-      setCollectionData(res.data);
-    });
+    axios
+      .get("/api/collection", { params: { postPublished: true } })
+      .then((res) => {
+        setCollectionData(res.data);
+      });
   }, []);
   return (
     <>
