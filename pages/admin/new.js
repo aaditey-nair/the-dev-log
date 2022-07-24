@@ -3,16 +3,20 @@ import SubmitPrimary from "../../src/elements/SubmitPrimary";
 import MdEditor from "../../src/components/MdEditor";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPlus } from "@fortawesome/free-solid-svg-icons";
+import { PrismaClient } from "@prisma/client";
 import axios from "axios";
 
-function New() {
-  const [collections, setCollections] = useState([]);
-  useEffect(() => {
-    axios.get("/api/collection", { posts: false }).then((res) => {
-      setCollections(res.data);
-    });
-  }, []);
+export async function getServerSideProps() {
+  const prisma = new PrismaClient();
+  const collections = await prisma.collection.findMany({
+    select: {
+      name: true,
+    },
+  });
+  return { props: { collections: collections } };
+}
 
+function New({ collections }) {
   const [postData, setPostData] = useState({
     data: {
       title: "",
