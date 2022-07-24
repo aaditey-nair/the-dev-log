@@ -17,7 +17,7 @@ model Blog {
   published      Boolean     @default(false)
   liked          Int         @default(0)
   tags           Json?
-  headerImg      String
+  headerImg      String?
   collection     Collection? @relation(fields: [collectionName], references: [name])
   collectionName String?
   path           String
