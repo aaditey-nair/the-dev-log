@@ -16,7 +16,7 @@ export async function getServerSideProps() {
   return { props: { collections: collections } };
 }
 
-function New({ collections }) { 
+function New({ collections }) {
   const [postData, setPostData] = useState({
     data: {
       title: "",
@@ -24,6 +24,7 @@ function New({ collections }) {
       tags: undefined,
       collection: undefined,
       published: false,
+      headerImg: undefined,
     },
   });
   const editor = useRef(null);
@@ -102,7 +103,7 @@ function New({ collections }) {
           Published
         </label>
       </div>
-      <div className="col-span-full">
+      <div>
         <h1 className="inline text-lg">Tags</h1>
         <div className="flex gap-4 mt-2 text-dark">
           {postData.data.tags &&
@@ -149,6 +150,20 @@ function New({ collections }) {
           <button className="bg-primary px-4 py-2 text-dark">Add</button>
         </form>
       </div>
+      <input
+        onChange={(e) => {
+          setPostData((prev) => ({
+            data: {
+              ...prev.data,
+              headerImg: e.target.value,
+            },
+          }));
+        }}
+        className="min-w-full h-12 text-dark bg-light px-4 focus-within:border-0"
+        placeholder="https://picture.com"
+        type="text"
+        name="header-img"
+      />
       <MdEditor ref={editor} placeholder="# New Post" />
       <SubmitPrimary
         handleSubmit={() => {

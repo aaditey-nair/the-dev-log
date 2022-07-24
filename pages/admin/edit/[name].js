@@ -26,6 +26,7 @@ export async function getServerSideProps(ctx) {
       collectionName: true,
       published: true,
       path: true,
+      headerImg: true,
     },
   });
   post.content = fs.readFileSync(post.path).toString();
@@ -40,6 +41,7 @@ function Edit({ collections, data }) {
       tags: data.tags,
       collection: data.collectionName,
       published: data.published,
+      headerImg: data.headerImg ? data.headerImg : undefined,
     },
   });
   const editor = useRef(null);
@@ -122,7 +124,7 @@ function Edit({ collections, data }) {
           Published
         </label>
       </div>
-      <div className="col-span-full">
+      <div>
         <h1 className="inline text-lg">Tags</h1>
         <div className="flex gap-4 mt-2 text-dark">
           {postData.data.tags &&
@@ -169,6 +171,20 @@ function Edit({ collections, data }) {
           <button className="bg-primary px-4 py-2 text-dark">Add</button>
         </form>
       </div>
+      <input
+        onChange={(e) => {
+          setPostData((prev) => ({
+            data: {
+              ...prev.data,
+              headerImg: e.target.value,
+            },
+          }));
+        }}
+        className="min-w-full h-12 text-dark bg-light px-4 focus-within:border-0"
+        placeholder="https://picture.com"
+        type="text"
+        name="header-img"
+      />
       <MdEditor ref={editor} placeholder={data.content} />
       <SubmitPrimary
         handleSubmit={() => {
