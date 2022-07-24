@@ -10,9 +10,9 @@ function AdminPost({ name, id }) {
         <FontAwesomeIcon className="text-primary" icon={faPenToSquare} />
         <FontAwesomeIcon
           onClick={() => {
-            axios.delete("/api/posts/" + id);
+            axios.delete("/api/posts/" + name);
           }}
-          className="text-secondary"
+          className="text-secondary cursor-pointer"
           icon={faTrashCan}
         />
       </div>
