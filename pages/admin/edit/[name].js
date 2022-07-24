@@ -6,6 +6,8 @@ import { faPlus } from "@fortawesome/free-solid-svg-icons";
 import { PrismaClient } from "@prisma/client";
 import axios from "axios";
 
+const fs = require("fs");
+
 export async function getServerSideProps(ctx) {
   const prisma = new PrismaClient();
   const collections = await prisma.collection.findMany({
@@ -23,8 +25,10 @@ export async function getServerSideProps(ctx) {
       tags: true,
       collectionName: true,
       published: true,
+      path: true,
     },
   });
+  post.content = fs.readFileSync(post.path).toString();
   return { props: { collections: collections, data: post } };
 }
 
@@ -165,7 +169,7 @@ function Edit({ collections, data }) {
           <button className="bg-primary px-4 py-2 text-dark">Add</button>
         </form>
       </div>
-      <MdEditor ref={editor} placeholder="# New Post" />
+      <MdEditor ref={editor} placeholder={data.content} />
       <SubmitPrimary
         handleSubmit={() => {
           const newPostData = {
