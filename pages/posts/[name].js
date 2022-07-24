@@ -4,6 +4,7 @@ import {
   faHandsClapping,
   faShare,
 } from "@fortawesome/free-solid-svg-icons";
+import Image from "next/image";
 
 import Markdown from "../../src/components/Markdown";
 
@@ -29,7 +30,14 @@ function Post({ post }) {
   return (
     <>
       <header>
-        <div className="w-full h-80 bg-secondary"></div>
+        <div className="h-[70vh] relative">
+          <Image
+            objectFit="contain"
+            objectPosition="left"
+            layout="fill"
+            src={post.headerImg}
+          />
+        </div>
         <h1 className="text-5xl my-4 font-black text-primary">{post.title}</h1>
         <p className="font-mono">
           {date} | 4 min read |{" "}
