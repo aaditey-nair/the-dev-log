@@ -83,6 +83,7 @@ async function deletePost(req, res) {
         title: req.query.post,
       },
     });
+    fs.unlinkSync(deletedPost.path);
     return res.status(200).json(deletedPost, { success: true });
   } catch (error) {
     console.log("Error", error);
