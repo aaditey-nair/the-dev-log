@@ -37,7 +37,7 @@ async function getPost(req, res) {
 
 async function updatePost(req, res) {
   try {
-    const { title, slug, tags, published, content } = req.body;
+    const { title, slug, tags, published, content, headerImg } = req.body;
     const filePath = path.join(
       __dirname,
       "..",
@@ -64,6 +64,7 @@ async function updatePost(req, res) {
         tags: tags ? tags : undefined,
         published: published,
         path: newFilePath,
+        headerImg: headerImg
       },
     });
     return res.status(200).json(updatedPost, { success: true });

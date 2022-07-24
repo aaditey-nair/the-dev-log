@@ -63,6 +63,7 @@ async function makePost(req, res) {
         tags: body.tags,
         path: filePath,
         published: body.published,
+        headerImg: body.headerImg,
       },
     });
     return res.status(200).json(newBlog, { success: true });

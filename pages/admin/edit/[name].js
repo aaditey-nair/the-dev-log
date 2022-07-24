@@ -180,6 +180,7 @@ function Edit({ collections, data }) {
             },
           }));
         }}
+        value={postData.data.headerImg}
         className="min-w-full h-12 text-dark bg-light px-4 focus-within:border-0"
         placeholder="https://picture.com"
         type="text"
