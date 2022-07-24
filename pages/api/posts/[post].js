@@ -48,7 +48,10 @@ async function updatePost(req, res) {
       "public",
       "posts"
     );
-    fs.writeFile(filePath + "/" + title + ".md", content, (err) => {
+    const originalFilePath = filePath + "/" + req.query.post + ".md";
+    const newFilePath = filePath + "/" + title + ".md";
+    if (originalFilePath != newFilePath) fs.unlinkSync(originalFilePath);
+    fs.writeFile(newFilePath, content, (err) => {
       if (err) throw err;
     });
     const updatedPost = await prisma.blog.update({
@@ -60,7 +63,7 @@ async function updatePost(req, res) {
         slug: slug,
         tags: tags ? tags : undefined,
         published: published,
-        path: filePath,
+        path: newFilePath,
       },
     });
     return res.status(200).json(updatedPost, { success: true });
