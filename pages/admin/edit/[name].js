@@ -186,7 +186,7 @@ function Edit({ collections, data }) {
             }
           });
         }}
-        name="Create Post"
+        name="Update Post"
       />
     </div>
   );
