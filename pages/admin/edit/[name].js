@@ -177,14 +177,15 @@ function Edit({ collections, data }) {
             path: editor.current.value,
           };
           delete newPostData.collection;
-          axios.post("/api/posts", newPostData).then((res) => {
-            const postId = res.data.id;
-            if (postData.data.collection) {
-              axios.patch(`/api/collection/${postData.data.collection}`, {
-                postId: postId,
-              });
-            }
-          });
+          axios.put("/api/posts" + data.title, newPostData);
+          // .then((res) => {
+          // const postId = res.data.id;
+          // if (postData.data.collection) {
+          //   axios.patch(`/api/collection/${postData.data.collection}`, {
+          //     postId: postId,
+          //   });
+          // }
+          // });
         }}
         name="Update Post"
       />
