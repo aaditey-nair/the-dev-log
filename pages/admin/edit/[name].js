@@ -1,6 +1,6 @@
 import { useRef, useState } from "react";
-import SubmitPrimary from "../../src/elements/SubmitPrimary";
-import MdEditor from "../../src/components/MdEditor";
+import SubmitPrimary from "../../../src/elements/SubmitPrimary";
+import MdEditor from "../../../src/components/MdEditor";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPlus } from "@fortawesome/free-solid-svg-icons";
 import { PrismaClient } from "@prisma/client";
@@ -16,7 +16,7 @@ export async function getServerSideProps() {
   return { props: { collections: collections } };
 }
 
-function New({ collections }) { 
+function Edit({ collections }) {
   const [postData, setPostData] = useState({
     data: {
       title: "",
@@ -172,4 +172,4 @@ function New({ collections }) {
   );
 }
 
-export default New;
+export default Edit;
