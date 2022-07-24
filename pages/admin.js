@@ -9,8 +9,6 @@ export async function getServerSideProps() {
     select: {
       id: true,
       title: true,
-      path: true,
-      published: true,
     },
   });
   const publishedPosts = posts.filter((post) => post.published);
