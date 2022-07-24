@@ -19,7 +19,7 @@ function Statusbar() {
         <StatusbarItem name="socials" icon={faCodeBranch}>
           <a
             target="_blank"
-            href="https://github.com/Aaditey-Nair"
+            href="https://github.com/aaditeynair"
             className="space-x-2 block"
           >
             <FontAwesomeIcon size="sm" icon={faCodeCommit} />
