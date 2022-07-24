@@ -35,23 +35,27 @@ function Admin({ publishedPosts, unpublishedPosts }) {
       <div className="mt-8">
         <h1 className="text-xl font-black mb-4">Unpublished Posts</h1>
         <div className="grid grid-cols-5 gap-4">
-          <AdminPost name="This is a Post" />
-          <AdminPost name="This is a Post" />
+          {unpublishedPosts.map((post) => {
+            return (
+              <AdminPost
+                key={post.title + "notpublished" + post.id}
+                name={post.title}
+              />
+            );
+          })}
         </div>
       </div>
       <div className="mt-8">
         <h1 className="text-xl font-black mb-4">Published Posts</h1>
         <div className="grid grid-cols-5 gap-4">
-          <AdminPost name="This is a Post" />
-          <AdminPost name="This is a Post" />
-          <AdminPost name="This is a Post" />
-          <AdminPost name="This is a Post" />
-          <AdminPost name="This is a Post" />
-          <AdminPost name="This is a Post" />
-          <AdminPost name="This is a Post" />
-          <AdminPost name="This is a Post" />
-          <AdminPost name="This is a Post" />
-          <AdminPost name="This is a Post" />
+          {publishedPosts.map((post) => {
+            return (
+              <AdminPost
+                key={post.title + "publishedtrue" + post.id}
+                name={post.title}
+              />
+            );
+          })}
         </div>
       </div>
     </>
